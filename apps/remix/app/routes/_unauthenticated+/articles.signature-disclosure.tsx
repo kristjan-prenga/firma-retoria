@@ -1,154 +1,81 @@
 import { SUPPORT_EMAIL } from '@documenso/lib/constants/app';
 import { Button } from '@documenso/ui/primitives/button';
-import { Trans } from '@lingui/react/macro';
 import { Link } from 'react-router';
 
+// Retoria: informativa scritta per l'Italia (firma elettronica semplice), al posto del testo
+// di Documenso basato sulla legge statunitense (E-Sign Act).
 export default function SignatureDisclosure() {
   return (
     <div>
       <article className="prose dark:prose-invert">
-        <h1>
-          <Trans>Electronic Signature Disclosure</Trans>
-        </h1>
+        <h1>Informativa sulla firma elettronica</h1>
 
-        <h2>
-          <Trans>Welcome</Trans>
-        </h2>
+        <h2>A cosa serve</h2>
         <p>
-          <Trans>
-            Thank you for using Documenso to perform your electronic document signing. The purpose of this disclosure is
-            to inform you about the process, legality, and your rights regarding the use of electronic signatures on our
-            platform. By opting to use an electronic signature, you are agreeing to the terms and conditions outlined
-            below.
-          </Trans>
+          Firma Retoria è il servizio di firma elettronica di Retoria ETS. Questa pagina spiega che tipo di firma apponi,
+          cosa viene registrato e quali sono i tuoi diritti prima di firmare.
         </p>
 
-        <h2>
-          <Trans>Acceptance and Consent</Trans>
-        </h2>
+        <h2>Che tipo di firma è</h2>
         <p>
-          <Trans>
-            When you use our platform to affix your electronic signature to documents, you are consenting to do so under
-            the Electronic Signatures in Global and National Commerce Act (E-Sign Act) and other applicable laws. This
-            action indicates your agreement to use electronic means to sign documents and receive notifications.
-          </Trans>
+          È una firma elettronica semplice ai sensi del Regolamento (UE) n. 910/2014 (eIDAS). Non è una firma digitale né
+          una firma elettronica qualificata o avanzata. Secondo l'articolo 20, comma 1-bis, del Codice
+          dell'amministrazione digitale (D.Lgs. 82/2005), la sua idoneità a soddisfare il requisito della forma scritta e
+          il suo valore probatorio sono liberamente valutabili in giudizio, in relazione alle caratteristiche di
+          sicurezza, integrità e immodificabilità del documento. Quando una legge richiede la firma digitale o
+          qualificata, questa firma non la sostituisce.
         </p>
 
-        <h2>
-          <Trans>Legality of Electronic Signatures</Trans>
-        </h2>
+        <h2>Cosa viene registrato</h2>
         <p>
-          <Trans>
-            An electronic signature provided by you on our platform, achieved through clicking through to a document and
-            entering your name, or any other electronic signing method we provide, is legally binding. It carries the
-            same weight and enforceability as a manual signature written with ink on paper.
-          </Trans>
+          Per ogni documento il servizio registra il nome e l'indirizzo email di chi firma, la data e l'ora di ogni
+          passaggio, l'indirizzo IP e il browser usato. Queste informazioni compaiono nel certificato di firma allegato al
+          documento finale e servono a dimostrare chi ha firmato e quando.
         </p>
 
-        <h2>
-          <Trans>System Requirements</Trans>
-        </h2>
-        <p>
-          <Trans>To use our electronic signature service, you must have access to:</Trans>
-        </p>
+        <h2>Cosa ti serve</h2>
         <ul>
-          <li>
-            <Trans>A stable internet connection</Trans>
-          </li>
-          <li>
-            <Trans>An email account</Trans>
-          </li>
-          <li>
-            <Trans>A device capable of accessing, opening, and reading documents</Trans>
-          </li>
-          <li>
-            <Trans>A means to print or download documents for your records</Trans>
-          </li>
+          <li>Una connessione a internet</li>
+          <li>Un indirizzo email</li>
+          <li>Un dispositivo che apra e mostri documenti PDF</li>
+          <li>Un modo per scaricare o stampare il documento firmato</li>
         </ul>
 
-        <h2>
-          <Trans>Electronic Delivery of Documents</Trans>
-        </h2>
+        <h2>Consenso all'uso di mezzi elettronici</h2>
         <p>
-          <Trans>
-            All documents related to the electronic signing process will be provided to you electronically through our
-            platform or via email. It is your responsibility to ensure that your email address is current and that you
-            can receive and open our emails.
-          </Trans>
+          Firmando con questo servizio accetti di firmare il documento e di ricevere le comunicazioni che lo riguardano
+          in forma elettronica, sulla piattaforma o per email.
         </p>
 
-        <h2>
-          <Trans>Consent to Electronic Transactions</Trans>
-        </h2>
+        <h2>Se non vuoi firmare</h2>
         <p>
-          <Trans>
-            By using the electronic signature feature, you are consenting to conduct transactions and receive
-            disclosures electronically. You acknowledge that your electronic signature on documents is binding and that
-            you accept the terms outlined in the documents you are signing.
-          </Trans>
+          Fino a quando non completi la firma puoi non firmare o rifiutare il documento. Per qualsiasi dubbio sul
+          contenuto rivolgiti a chi te lo ha inviato. Se non riesci a contattarlo scrivi a{' '}
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         </p>
 
-        <h2>
-          <Trans>Withdrawing Consent</Trans>
-        </h2>
+        <h2>Copia del documento</h2>
         <p>
-          <Trans>
-            You have the right to withdraw your consent to use electronic signatures at any time before completing the
-            signing process. To withdraw your consent, please contact the sender of the document. In failing to contact
-            the sender you may reach out to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> for assistance. Be
-            aware that withdrawing consent may delay or halt the completion of the related transaction or service.
-          </Trans>
+          Quando tutti hanno firmato ricevi per email il documento firmato con il certificato di firma. Conservane una
+          copia: il servizio potrebbe non conservarlo per sempre.
         </p>
 
-        <h2>
-          <Trans>Updating Your Information</Trans>
-        </h2>
+        <h2>Chi è responsabile del documento</h2>
         <p>
-          <Trans>
-            It is crucial to keep your contact information, especially your email address, up to date with us. Please
-            notify us immediately of any changes to ensure that you continue to receive all necessary communications.
-          </Trans>
+          Il contenuto del documento è responsabilità di chi te lo ha inviato. Retoria ETS fornisce lo strumento di
+          firma.
         </p>
 
-        <h2>
-          <Trans>Retention of Documents</Trans>
-        </h2>
+        <h2>Contatti</h2>
         <p>
-          <Trans>
-            After signing a document electronically, you will be provided the opportunity to view, download, and print
-            the document for your records. It is highly recommended that you retain a copy of all electronically signed
-            documents for your personal records. We will also retain a copy of the signed document for our records
-            however we may not be able to provide you with a copy of the signed document after a certain period of time.
-          </Trans>
-        </p>
-
-        <h2>
-          <Trans>Acknowledgment</Trans>
-        </h2>
-        <p>
-          <Trans>
-            By proceeding to use the electronic signature service provided by Documenso, you affirm that you have read
-            and understood this disclosure. You agree to all terms and conditions related to the use of electronic
-            signatures and electronic transactions as outlined herein.
-          </Trans>
-        </p>
-
-        <h2>
-          <Trans>Contact Information</Trans>
-        </h2>
-        <p>
-          <Trans>
-            For any questions regarding this disclosure, electronic signatures, or any related process, please contact
-            us at: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-          </Trans>
+          Per domande su questa informativa o sul servizio scrivi a{' '}
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         </p>
       </article>
 
       <div className="mt-8">
         <Button asChild>
-          <Link to="/">
-            <Trans>Back home</Trans>
-          </Link>
+          <Link to="/">Torna alla pagina iniziale</Link>
         </Button>
       </div>
     </div>

@@ -8854,7 +8854,7 @@ msgstr ""
 #: apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-password.tsx
 msgid "Password"
-msgstr "\"Password\""
+msgstr "Password"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Password authentication unavailable"

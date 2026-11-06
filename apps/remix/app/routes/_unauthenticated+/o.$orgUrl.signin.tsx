@@ -157,7 +157,7 @@ export default function OrganisationSignIn({ loaderData }: Route.ComponentProps)
 
   return (
     <div className="w-screen max-w-lg px-4">
-      <div className="z-10 rounded-xl border border-border bg-neutral-100 p-6 dark:bg-background">
+      <div className="z-10 rounded-xl border border-border bg-card p-6 shadow-[0_8px_24px_rgba(27,58,47,0.07)] dark:bg-card">
         <h1 className="font-semibold text-2xl">
           <Trans>Welcome to {organisationName}</Trans>
         </h1>
