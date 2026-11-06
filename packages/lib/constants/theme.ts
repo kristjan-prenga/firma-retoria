@@ -19,34 +19,35 @@ import type { TCssVarsSchema } from '../types/css-vars';
  *
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
+// Retoria: palette «Bosco & Terracotta» di retoria.it (usata anche per i colori delle email).
 export const DEFAULT_BRAND_COLORS = {
-  background: '#ffffff', //              0 0% 100%
-  foreground: '#0f172a', //              222.2 47.4% 11.2%
-  muted: '#f1f5f9', //                   210 40% 96.1%
-  mutedForeground: '#64748b', //         215.4 16.3% 46.9%
-  popover: '#ffffff', //                 0 0% 100%
-  popoverForeground: '#0f172a', //       222.2 47.4% 11.2%
-  card: '#ffffff', //                    0 0% 100%
-  cardBorder: '#e2e8f0', //              214.3 31.8% 91.4%
-  cardForeground: '#0f172a', //          222.2 47.4% 11.2%
-  fieldCard: '#e2f8d3', //               95 74% 90%
-  fieldCardBorder: '#a2e771', //         95.08 71.08% 67.45%
-  fieldCardForeground: '#0f172a', //     222.2 47.4% 11.2%
-  widget: '#f7f7f7', //                  0 0% 97%
-  widgetForeground: '#f2f2f2', //        0 0% 95%
-  border: '#e2e8f0', //                  214.3 31.8% 91.4%
-  input: '#e2e8f0', //                   214.3 31.8% 91.4%
-  primary: '#a2e771', //                 95.08 71.08% 67.45%
-  primaryForeground: '#162c07', //       95.08 71.08% 10%
-  secondary: '#f1f5f9', //               210 40% 96.1%
-  secondaryForeground: '#0f172a', //     222.2 47.4% 11.2%
-  accent: '#f1f5f9', //                  210 40% 96.1%
-  accentForeground: '#0f172a', //        222.2 47.4% 11.2%
-  destructive: '#ff0000', //             0 100% 50%
-  destructiveForeground: '#f8fafc', //   210 40% 98%
-  ring: '#a2e771', //                    95.08 71.08% 67.45%
-  warning: '#e1cb05', //                 54 96% 45%
-  envelopeEditorBackground: '#f8fafc', //210 40% 98.04%
+  background: '#f4f1e8',
+  foreground: '#2a2a28',
+  muted: '#efeadd',
+  mutedForeground: '#62635a',
+  popover: '#ffffff',
+  popoverForeground: '#2a2a28',
+  card: '#ffffff',
+  cardBorder: '#e4decf',
+  cardForeground: '#2a2a28',
+  fieldCard: '#f6e9e1',
+  fieldCardBorder: '#b86038',
+  fieldCardForeground: '#2a2a28',
+  widget: '#efeadd',
+  widgetForeground: '#e4decf',
+  border: '#e4decf',
+  input: '#d6ceba',
+  primary: '#203830',
+  primaryForeground: '#f4f1e8',
+  secondary: '#e7efe3',
+  secondaryForeground: '#203830',
+  accent: '#e7efe3',
+  accentForeground: '#203830',
+  destructive: '#c32a22',
+  destructiveForeground: '#ffffff',
+  ring: '#2e5e4e',
+  warning: '#e1cb05',
+  envelopeEditorBackground: '#efeadd',
   // `cardBorderTint` is intentionally excluded from the colour-picker UI:
   // unlike the rest of these tokens it is consumed via `rgb(var(--token))`
   // (not `hsl(...)`) and stored as raw RGB triplets in `theme.css`. It does
@@ -55,4 +56,4 @@ export const DEFAULT_BRAND_COLORS = {
   // `DEFAULT_BRAND_RADIUS` below.
 } as const satisfies Record<keyof Omit<TCssVarsSchema, 'radius' | 'cardBorderTint'>, string>;
 
-export const DEFAULT_BRAND_RADIUS = '0.5rem';
+export const DEFAULT_BRAND_RADIUS = '0.75rem';

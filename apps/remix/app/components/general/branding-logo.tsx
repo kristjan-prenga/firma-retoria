@@ -1,15 +1,15 @@
-import LogoImage from '@documenso/assets/logo.png';
+import LogoScuro from '@documenso/assets/logo-retoria-scuro.svg';
+import LogoChiaro from '@documenso/assets/logo-retoria.svg';
 import { cn } from '@documenso/ui/lib/utils';
 
 export type LogoProps = { className?: string };
 
-// Retoria: logo di Firma Retoria al posto di quello di Documenso; nel tema scuro sta su una piastrina carta.
+// Retoria: logo vettoriale di retoria.it, versione per fondo chiaro e per fondo scuro.
 export const BrandingLogo = ({ className }: LogoProps) => {
   return (
-    <img
-      src={LogoImage}
-      alt="Firma Retoria"
-      className={cn('dark:rounded-lg dark:bg-[#F4F1E8] dark:px-2 dark:py-1', className)}
-    />
+    <>
+      <img src={LogoChiaro} alt="Firma Retoria" className={cn(className, 'dark:hidden')} />
+      <img src={LogoScuro} alt="Firma Retoria" className={cn(className, 'hidden dark:inline-block')} />
+    </>
   );
 };
