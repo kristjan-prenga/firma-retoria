@@ -1830,7 +1830,7 @@ msgstr "Um administrador excluiu seu documento \"{documentName}\"."
 
 #: packages/email/template-components/template-admin-user-created.tsx
 msgid "An administrator has created a Documenso account for you."
-msgstr ""
+msgstr "An administrator has created a Firma Retoria account for you."
 
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "An electronic signature provided by you on our platform, achieved through clicking through to a document and entering your name, or any other electronic signing method we provide, is legally binding. It carries the same weight and enforceability as a manual signature written with ink on paper."
@@ -3560,7 +3560,7 @@ msgstr ""
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "Could not connect to the Documenso embed. Close this window and try again."
-msgstr ""
+msgstr "Could not connect to the Firma Retoria embed. Close this window and try again."
 
 #: apps/remix/app/components/general/organisation-usage-reset-button.tsx
 msgid "Counter reset."
@@ -10824,7 +10824,7 @@ msgstr "Sessão revogada"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
 msgid "Sessions created by signing in to Documenso embedded on another website."
-msgstr ""
+msgstr "Sessions created by signing in to Firma Retoria embedded on another website."
 
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 msgid "Sessions have been revoked"
@@ -10849,7 +10849,7 @@ msgstr "Configure as propriedades do seu modelo e informações do destinatário
 
 #: packages/email/templates/admin-user-created.tsx
 msgid "Set your password for Documenso"
-msgstr ""
+msgstr "Set your password for Firma Retoria"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 #: apps/remix/app/components/general/app-command-menu.tsx
@@ -10986,7 +10986,7 @@ msgstr "Assinar Documento"
 
 #: apps/remix/app/routes/_recipient+/_layout.tsx
 msgid "Sign Document - Documenso"
-msgstr ""
+msgstr "Sign Document - Firma Retoria"
 
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
 msgid "Sign Documents"
@@ -11024,7 +11024,7 @@ msgstr ""
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "Sign in to Documenso to continue"
-msgstr ""
+msgstr "Sign in to Firma Retoria to continue"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
@@ -12855,7 +12855,7 @@ msgstr "Este documento foi criado usando um link direto."
 
 #: packages/email/template-components/template-footer.tsx
 msgid "This document was sent using <0>Documenso</0>."
-msgstr ""
+msgstr "This document was sent using <0>Firma Retoria</0>."
 
 #: apps/remix/app/components/dialogs/envelope-duplicate-dialog.tsx
 msgid "This document will be duplicated."
@@ -13071,7 +13071,7 @@ msgstr "Isso desconectará você de todos os outros dispositivos. Você precisar
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "This window must be opened from a Documenso embed."
-msgstr ""
+msgstr "This window must be opened from a Firma Retoria embed."
 
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
 #: apps/remix/app/components/tables/document-logs-table.tsx
@@ -13930,7 +13930,7 @@ msgstr ""
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Use API tokens to authenticate with the Documenso API."
-msgstr ""
+msgstr "Use API tokens to authenticate with the Firma Retoria API."
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
 #: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
@@ -14341,7 +14341,7 @@ msgstr "Aguardando Sua Vez"
 #: apps/remix/app/routes/_recipient+/sign.$token+/_index.tsx
 #: apps/remix/app/routes/_recipient+/sign.$token+/_index.tsx
 msgid "Want to send slick signing links like this one? <0>Check out Documenso</0>."
-msgstr ""
+msgstr "Want to send slick signing links like this one? <0>Check out Firma Retoria</0>."
 
 #: apps/remix/app/routes/_profile+/_layout.tsx
 msgid "Want your own public profile?"
@@ -14865,7 +14865,7 @@ msgstr "Bem-vindo à {organisationName}"
 
 #: packages/lib/jobs/definitions/emails/send-admin-user-created-email.handler.ts
 msgid "Welcome to Documenso"
-msgstr ""
+msgstr "Welcome to Firma Retoria"
 
 #: packages/email/template-components/template-admin-user-created.tsx
 #: packages/email/template-components/template-confirmation-email.tsx
@@ -15214,7 +15214,7 @@ msgstr "Você só pode detectar campos em envelopes de rascunho"
 
 #: packages/email/templates/confirm-team-email.tsx
 msgid "You can revoke access at any time in your team settings on Documenso <0>here</0>."
-msgstr ""
+msgstr "You can revoke access at any time in your team settings on Firma Retoria <0>here</0>."
 
 #: apps/remix/app/components/forms/public-profile-form.tsx
 msgid "You can update the profile URL by updating the team URL in the general settings page."
@@ -15371,7 +15371,7 @@ msgstr "Você foi convidado para participar de {0} no Firma Retoria"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have been invited to join <0>{organisationName}</0> on Documenso."
-msgstr ""
+msgstr "You have been invited to join <0>{organisationName}</0> on Firma Retoria."
 
 #: packages/email/templates/organisation-invite.tsx
 msgid "You have been invited to join the following organisation"
@@ -15910,7 +15910,7 @@ msgstr "Seus modelos de assinatura direta"
 #: packages/email/templates/account-disabled.tsx
 #: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
 msgid "Your Documenso account has been disabled"
-msgstr ""
+msgstr "Your Firma Retoria account has been disabled"
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "Your document content will be sent securely to our AI provider solely for detection and will not be stored or used for training."

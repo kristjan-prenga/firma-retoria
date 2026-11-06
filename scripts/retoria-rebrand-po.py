@@ -20,7 +20,12 @@ def rebrand(text: str) -> tuple[str, int]:
             msgid += line
         elif not line.startswith('"'):
             in_str = False
-        if in_str and "Documenso" in line and not any(k in msgid for k in KEEP):
+        keep = any(k in msgid for k in KEEP)
+        if line.startswith('msgstr ""') and line.strip() == 'msgstr ""' and "Documenso" in msgid and not keep and not msgid.startswith('msgid ""'):
+            # msgstr vuoto: lingui mostrerebbe il testo inglese originale, quindi si riempie con quello rinominato
+            line = "msgstr " + msgid[len("msgid "):].replace("Documenso", "Firma Retoria")
+            changed += 1
+        elif in_str and "Documenso" in line and not keep:
             line = line.replace("Documenso", "Firma Retoria")
             changed += 1
         out.append(line)
@@ -31,6 +36,8 @@ if __name__ == "__main__":
     # autoverifica minima
     t, n = rebrand('msgid "Hi Documenso"\nmsgstr "Ciao Documenso"\n\nmsgid "Documenso License"\nmsgstr "Licenza Documenso"\n')
     assert n == 1 and "Ciao Firma Retoria" in t and "Licenza Documenso" in t and 'msgid "Hi Documenso"' in t, t
+    t, n = rebrand('msgid "Join Documenso"\nmsgstr ""\n')
+    assert n == 1 and 'msgstr "Join Firma Retoria"' in t and 'msgid "Join Documenso"' in t, t
     for path in sys.argv[1:]:
         with open(path, encoding="utf-8") as f:
             new, n = rebrand(f.read())

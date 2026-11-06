@@ -3565,7 +3565,7 @@ msgstr ""
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "Could not connect to the Documenso embed. Close this window and try again."
-msgstr ""
+msgstr "Could not connect to the Firma Retoria embed. Close this window and try again."
 
 #: apps/remix/app/components/general/organisation-usage-reset-button.tsx
 msgid "Counter reset."
@@ -10829,7 +10829,7 @@ msgstr "Sessie ingetrokken"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
 msgid "Sessions created by signing in to Documenso embedded on another website."
-msgstr ""
+msgstr "Sessions created by signing in to Firma Retoria embedded on another website."
 
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 msgid "Sessions have been revoked"
@@ -11029,7 +11029,7 @@ msgstr ""
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "Sign in to Documenso to continue"
-msgstr ""
+msgstr "Sign in to Firma Retoria to continue"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
@@ -13076,7 +13076,7 @@ msgstr "Hiermee wordt je op alle andere apparaten uitgelogd. Je moet op die appa
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "This window must be opened from a Documenso embed."
-msgstr ""
+msgstr "This window must be opened from a Firma Retoria embed."
 
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
 #: apps/remix/app/components/tables/document-logs-table.tsx
@@ -13935,7 +13935,7 @@ msgstr ""
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Use API tokens to authenticate with the Documenso API."
-msgstr ""
+msgstr "Use API tokens to authenticate with the Firma Retoria API."
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
 #: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
@@ -15376,7 +15376,7 @@ msgstr "Je bent uitgenodigd om {0} op Firma Retoria te joinen"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have been invited to join <0>{organisationName}</0> on Documenso."
-msgstr ""
+msgstr "You have been invited to join <0>{organisationName}</0> on Firma Retoria."
 
 #: packages/email/templates/organisation-invite.tsx
 msgid "You have been invited to join the following organisation"
@@ -15915,7 +15915,7 @@ msgstr "Je directe ondertekeningssjablonen"
 #: packages/email/templates/account-disabled.tsx
 #: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
 msgid "Your Documenso account has been disabled"
-msgstr ""
+msgstr "Your Firma Retoria account has been disabled"
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "Your document content will be sent securely to our AI provider solely for detection and will not be stored or used for training."

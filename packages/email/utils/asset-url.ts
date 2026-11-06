@@ -6,12 +6,13 @@
  * (e.g. "/ESign") is preserved. Passing a root-absolute path straight to
  * `new URL()` would otherwise replace the base pathname entirely.
  *
- * `getEmailAssetUrl('https://host/ESign', 'static/logo.png')` -> `https://host/ESign/static/logo.png`
- * `getEmailAssetUrl('https://host/ESign/', '/static/logo.png')` -> `https://host/ESign/static/logo.png`
+ * `getEmailAssetUrl('https://host/ESign', 'static/logo.png')` -> `https://host/ESign/static/logo.png?v=retoria`
+ * `getEmailAssetUrl('https://host/ESign/', '/static/logo.png')` -> `https://host/ESign/static/logo.png?v=retoria`
  */
 export const getEmailAssetUrl = (assetBaseUrl: string, path: string): string => {
   const base = assetBaseUrl.endsWith('/') ? assetBaseUrl : `${assetBaseUrl}/`;
   const relativePath = path.startsWith('/') ? path.slice(1) : path;
 
-  return new URL(relativePath, base).toString();
+  // Retoria: ?v=retoria cambia l'indirizzo, così Gmail e Cloudflare non usano le immagini Documenso in memoria.
+  return `${new URL(relativePath, base).toString()}?v=retoria`;
 };
