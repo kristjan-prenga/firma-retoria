@@ -29,8 +29,9 @@ export default function SignatureDisclosure() {
         <h2>Cosa viene registrato</h2>
         <p>
           Per ogni documento il servizio registra il nome e l'indirizzo email di chi firma, la data e l'ora di ogni
-          passaggio, l'indirizzo IP e il browser usato. Queste informazioni compaiono nel certificato di firma allegato al
-          documento finale e servono a dimostrare chi ha firmato e quando.
+          passaggio, l'indirizzo IP e il browser usato. Queste informazioni formano il certificato di firma, che serve a
+          dimostrare chi ha firmato e quando. Per proteggere i dati delle persone coinvolte il certificato non è allegato
+          al documento che ricevi: lo conserva chi ti ha inviato il documento.
         </p>
 
         <h2>Cosa ti serve</h2>
@@ -56,8 +57,8 @@ export default function SignatureDisclosure() {
 
         <h2>Copia del documento</h2>
         <p>
-          Quando tutti hanno firmato ricevi per email il documento firmato con il certificato di firma. Conservane una
-          copia: il servizio potrebbe non conservarlo per sempre.
+          Quando tutti hanno firmato ricevi per email il documento firmato. Conservane una copia: il servizio potrebbe non
+          conservarlo per sempre.
         </p>
 
         <h2>Chi è responsabile del documento</h2>
