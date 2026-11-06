@@ -9,7 +9,6 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router';
 
-import { SettingsOrgSwitcher } from './settings-org-switcher';
 import { SettingsTeamSwitcher } from './settings-team-switcher';
 
 export type UnifiedSettingsSidebarProps = {
@@ -20,13 +19,13 @@ export type UnifiedSettingsSidebarProps = {
 
 export const UnifiedSettingsSidebar = ({ groups, currentOrgUrl, currentTeamUrl }: UnifiedSettingsSidebarProps) => {
   return (
+    // Retoria: niente selettore di organizzazione; la sezione si chiama «Preferenze».
     <aside className="flex w-full flex-col" data-testid="unified-settings-sidebar">
       {currentOrgUrl && (
         <div className="p-4">
           <SidebarGroup
-            heading={<Trans>Organisation Settings</Trans>}
-            activeBgClassName="bg-[#F1FBEA] text-gray-900 hover:bg-[#F1FBEA] hover:text-gray-900 dark:bg-[#1C2515] dark:text-[#F1FBEA] dark:hover:bg-[#1C2515] dark:hover:text-[#F1FBEA]"
-            switcher={<SettingsOrgSwitcher currentOrgUrl={currentOrgUrl} />}
+            heading={<Trans>Preferences</Trans>}
+            activeBgClassName="bg-[#E7EFE3] text-gray-900 hover:bg-[#E7EFE3] hover:text-gray-900 dark:bg-[#1B2B24] dark:text-[#E7EFE3] dark:hover:bg-[#1B2B24] dark:hover:text-[#E7EFE3]"
             items={groups.organisation?.items ?? []}
             scope="organisation"
             emptyState={
@@ -48,7 +47,7 @@ export const UnifiedSettingsSidebar = ({ groups, currentOrgUrl, currentTeamUrl }
         <div className="border-t p-4">
           <SidebarGroup
             heading={<Trans>Team Settings</Trans>}
-            activeBgClassName="bg-[#F1FBEA] text-gray-900 hover:bg-[#F1FBEA] hover:text-gray-900 dark:bg-[#1C2515] dark:text-[#F1FBEA] dark:hover:bg-[#1C2515] dark:hover:text-[#F1FBEA]"
+            activeBgClassName="bg-[#E7EFE3] text-gray-900 hover:bg-[#E7EFE3] hover:text-gray-900 dark:bg-[#1B2B24] dark:text-[#E7EFE3] dark:hover:bg-[#1B2B24] dark:hover:text-[#E7EFE3]"
             switcher={<SettingsTeamSwitcher currentOrgUrl={currentOrgUrl} currentTeamUrl={currentTeamUrl} />}
             items={groups.team.items}
             scope={groups.team.scope}
@@ -59,7 +58,7 @@ export const UnifiedSettingsSidebar = ({ groups, currentOrgUrl, currentTeamUrl }
       <div className={cn('p-4', currentOrgUrl && 'border-t')}>
         <SidebarGroup
           heading={<Trans>Account Settings</Trans>}
-          activeBgClassName="bg-[#F1FBEA] text-gray-900 hover:bg-[#F1FBEA] hover:text-gray-900 dark:bg-[#1C2515] dark:text-[#F1FBEA] dark:hover:bg-[#1C2515] dark:hover:text-[#F1FBEA]"
+          activeBgClassName="bg-[#E7EFE3] text-gray-900 hover:bg-[#E7EFE3] hover:text-gray-900 dark:bg-[#1B2B24] dark:text-[#E7EFE3] dark:hover:bg-[#1B2B24] dark:hover:text-[#E7EFE3]"
           items={groups.account.items}
           scope={groups.account.scope}
         />

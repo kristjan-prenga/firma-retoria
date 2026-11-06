@@ -295,5 +295,12 @@ export const getSettingsNavGroups = ({
     ],
   };
 
-  return { organisation: orgGroup, team: teamGroup, account: accountGroup };
+  // Retoria: si mostrano solo le preferenze (documento, branding, email, promemoria, certificati),
+  // profilo e sicurezza. Team, organizzazioni, membri, gruppi, token API, webhook e profilo pubblico
+  // restano nel codice ma nascosti dal menu (le pagine rispondono ancora se si conosce l'indirizzo).
+  return {
+    organisation: orgGroup && { ...orgGroup, items: orgGroup.items.filter((item) => item.key.startsWith('preferences')) },
+    team: null,
+    account: { ...accountGroup, items: accountGroup.items.filter((item) => item.key !== 'organisations') },
+  };
 };

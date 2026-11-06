@@ -7,8 +7,6 @@ import { Trans } from '@lingui/react/macro';
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
-import { SettingsOrgSwitcher } from './settings-org-switcher';
-import { SettingsTeamSwitcher } from './settings-team-switcher';
 
 type MobileScope = SettingsNavScope | 'account';
 
@@ -119,7 +117,7 @@ export const UnifiedSettingsSidebarMobile = ({
         </div>
       ) : (
         <div className="px-4 py-2 text-center font-bold text-muted-foreground text-xs uppercase tracking-wide">
-          {activeScope === 'organisation' && <Trans>Organisation</Trans>}
+          {activeScope === 'organisation' && <Trans>Preferences</Trans>}
           {activeScope === 'team' && <Trans>Team</Trans>}
           {activeScope === 'account' && <Trans>Account</Trans>}
         </div>
@@ -128,15 +126,7 @@ export const UnifiedSettingsSidebarMobile = ({
       {/* The organisation switcher is always present in a scoped view — at team scope it's
           the only way for a user who can't manage the organisation to move between them,
           since the Organisation tab is absent when they have no organisation pages. */}
-      {activeScope !== 'account' && currentOrgUrl && (
-        <div className="flex flex-col gap-2 px-4">
-          <SettingsOrgSwitcher currentOrgUrl={currentOrgUrl} />
-
-          {activeScope === 'team' && (
-            <SettingsTeamSwitcher currentOrgUrl={currentOrgUrl} currentTeamUrl={currentTeamUrl} />
-          )}
-        </div>
-      )}
+      {/* Retoria: niente selettori di organizzazione e team. */}
 
       <div className="px-4">
         <div className="mb-1 font-bold text-[10px] text-muted-foreground uppercase tracking-wide">

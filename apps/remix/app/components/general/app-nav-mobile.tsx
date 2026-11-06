@@ -51,9 +51,6 @@ export const AppNavMobile = ({ isMenuOpen, onMenuOpenChange }: AppNavMobileProps
           href: '/inbox',
           text: t`Inbox`,
         },
-        ...(currentOrganisation && canAccessOrganisationAnalytics(currentOrganisation.currentOrganisationRole)
-          ? [{ href: formatOrganisationAnalyticsPath(currentOrganisation.url), text: t`Analytics` }]
-          : []),
         {
           href: '/settings/profile',
           text: t`Settings`,
@@ -76,9 +73,6 @@ export const AppNavMobile = ({ isMenuOpen, onMenuOpenChange }: AppNavMobileProps
         href: '/inbox',
         text: t`Inbox`,
       },
-      ...(canExecuteTeamAction('MANAGE_TEAM', navigationTeam.currentTeamRole)
-        ? [{ href: formatAnalyticsPath(teamUrl), text: t`Analytics` }]
-        : []),
       {
         href: '/settings/profile',
         text: t`Settings`,
