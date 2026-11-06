@@ -10435,7 +10435,7 @@ msgstr ""
 
 #: apps/remix/app/components/general/template/template-search.tsx
 msgid "Search templates..."
-msgstr ""
+msgstr "Cerca modelli..."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Search themes…"
