@@ -182,6 +182,19 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
           </SessionProvider>
         </NuqsAdapter>
 
+        {/* Retoria: avviso richiesto dalla licenza AGPL-3.0 (sezioni 5 e 13), con il link al sorgente modificato. */}
+        <p className="px-4 py-3 text-center text-muted-foreground text-xs">
+          Firma Retoria è basato su Documenso (© Documenso, Inc.), software libero distribuito senza alcuna garanzia con
+          licenza{' '}
+          <a className="underline" href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">
+            AGPL-3.0
+          </a>
+          {' · '}
+          <a className="underline" href="https://github.com/kristjan-prenga/firma-retoria" target="_blank" rel="noopener noreferrer">
+            Codice sorgente
+          </a>
+        </p>
+
         <script
           nonce={nonce(cspNonce)}
           dangerouslySetInnerHTML={{

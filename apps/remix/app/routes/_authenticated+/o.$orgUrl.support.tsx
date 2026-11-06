@@ -47,48 +47,15 @@ export default function SupportPage() {
         </p>
 
         <div className="mt-6 flex flex-col gap-4">
+          {/* Retoria: assistenza di Retoria ETS al posto dei canali di Documenso. */}
           <div className="rounded-lg border p-4">
             <h2 className="flex items-center gap-2 font-bold text-lg">
               <BookIcon className="h-5 w-5 text-muted-foreground" />
-              <Link
-                to="https://docs.documenso.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                <Trans>Documentation</Trans>
+              <Link to="mailto:info@retoria.it" className="hover:underline">
+                info@retoria.it
               </Link>
             </h2>
-            <p className="mt-1 text-muted-foreground">
-              <Trans>Read our documentation to get started with Documenso.</Trans>
-            </p>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h2 className="flex items-center gap-2 font-bold text-lg">
-              <Link2Icon className="h-5 w-5 text-muted-foreground" />
-              <Link
-                to="https://documen.so/discord"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                <Trans>Discord</Trans>
-              </Link>
-            </h2>
-            <p className="mt-1 text-muted-foreground">
-              <Trans>
-                Join our community on{' '}
-                <Link
-                  to="https://documen.so/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  Discord
-                </Link>{' '}
-                for community support and discussion.
-              </Trans>
-            </p>
+            <p className="mt-1 text-muted-foreground">Per assistenza su Firma Retoria scrivi a Retoria ETS.</p>
           </div>
           {organisation && IS_BILLING_ENABLED() && subscriptionStatus && (
             <div className="rounded-lg border p-4">

@@ -64,9 +64,9 @@ export const TemplateFooter = ({ isDocument = true, reportUrl }: TemplateFooterP
 
       {!branding.brandingEnabled && (
         <Text className="my-8 text-muted-foreground text-sm">
-          Documenso, Inc.
+          Firma Retoria · Retoria ETS
           <br />
-          2261 Market Street, #5211, San Francisco, CA 94114, USA
+          <Link href="https://retoria.it">retoria.it</Link>
         </Text>
       )}
     </Section>
