@@ -18,6 +18,31 @@
   font-display: swap;
 }
 
+/* Retoria: Space Grotesk per i titoli, come su retoria.it (OFL) */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Caveat Variable Font */
 @font-face {
   font-family: "Caveat";
@@ -65,7 +90,21 @@
 @layer base {
   :root {
     --font-sans: "Inter";
+    --font-heading: "Space Grotesk";
     --font-signature: "Caveat";
     --font-noto: "Noto Sans", "Noto Sans Korean", "Noto Sans Japanese", "Noto Sans Chinese";
+  }
+
+  /* Retoria: titoli in Space Grotesk come su retoria.it; testo selezionato in salvia */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading), var(--font-sans), sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: #c9d6c4;
+    color: #203830;
   }
 }

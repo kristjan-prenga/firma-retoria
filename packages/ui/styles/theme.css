@@ -3,47 +3,48 @@
 @tailwind utilities;
 
 @layer base {
+  /* Retoria: palette «Bosco & Terracotta» del sito retoria.it (inchiostro, alloro, terracotta, carta, salvia). */
   :root,
   .dark-mode-disabled {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 45.0 35.3% 93.3%;
+    --foreground: 60.0 2.4% 16.1%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 43.3 36.0% 90.2%;
+    --muted-foreground: 66.7 4.8% 37.1%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover: 0.0 0.0% 100.0%;
+    --popover-foreground: 60.0 2.4% 16.1%;
 
-    --card: 0 0% 100%;
-    --card-border: 214.3 31.8% 91.4%;
-    --card-border-tint: 112 205 159;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: 0.0 0.0% 100.0%;
+    --card-border: 42.9 28.0% 85.3%;
+    --card-border-tint: 184 96 56;
+    --card-foreground: 60.0 2.4% 16.1%;
 
-    --field-card: 95 74% 90%;
-    --field-card-border: 95.08 71.08% 67.45%;
-    --field-card-foreground: 222.2 47.4% 11.2%;
+    --field-card: 22.9 53.8% 92.4%;
+    --field-card-border: 18.8 53.3% 47.1%;
+    --field-card-foreground: 60.0 2.4% 16.1%;
 
-    --widget: 0 0% 97%;
-    --widget-foreground: 0 0% 95%;
+    --widget: 43.3 36.0% 90.2%;
+    --widget-foreground: 42.9 28.0% 85.3%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 42.9 28.0% 85.3%;
+    --input: 42.9 25.5% 78.4%;
 
-    --primary: 95.08 71.08% 67.45%;
-    --primary-foreground: 95.08 71.08% 10%;
+    --primary: 160.0 27.3% 17.3%;
+    --primary-foreground: 45.0 35.3% 93.3%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 100.0 27.3% 91.4%;
+    --secondary-foreground: 160.0 27.3% 17.3%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 100.0 27.3% 91.4%;
+    --accent-foreground: 160.0 27.3% 17.3%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 3 70% 45%;
+    --destructive-foreground: 0.0 0.0% 100.0%;
 
-    --ring: 95.08 71.08% 67.45%;
+    --ring: 160.0 34.3% 27.5%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --warning: 54 96% 45%;
 
@@ -138,53 +139,53 @@
     --new-surface-black: 0, 0%, 0%;
     --new-surface-white: 0, 0%, 91%;
 
-    --envelope-editor-background: 210 40% 98.04%;
+    --envelope-editor-background: 43.3 36.0% 90.2%;
   }
 
   .dark:not(.dark-mode-disabled) {
-    --background: 0 0% 14.9%;
-    --foreground: 0 0% 97%;
+    --background: 160 22% 9%;
+    --foreground: 45.0 35.3% 93.3%;
 
-    --muted: 0 0% 23.4%;
-    --muted-foreground: 0 0% 85%;
+    --muted: 160 18% 16%;
+    --muted-foreground: 45 15% 75%;
 
-    --popover: 0 0% 14.9%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 160 22% 11%;
+    --popover-foreground: 45.0 35.3% 93.3%;
 
-    --card: 0 0% 14.9%;
-    --card-border: 0 0% 27.9%;
-    --card-border-tint: 112 205 159;
-    --card-foreground: 0 0% 95%;
+    --card: 160 22% 11%;
+    --card-border: 160 14% 22%;
+    --card-border-tint: 201 214 196;
+    --card-foreground: 45.0 35.3% 93.3%;
 
-    --widget: 0 0% 14.9%;
-    --widget-foreground: 0 0% 18%;
+    --widget: 160 22% 11%;
+    --widget-foreground: 160 18% 16%;
 
-    --border: 0 0% 27.9%;
-    --input: 0 0% 27.9%;
+    --border: 160 14% 22%;
+    --input: 160 14% 26%;
 
     --field-border: 214.3 31.8% 91.4%;
 
-    --primary: 95.08 71.08% 67.45%;
-    --primary-foreground: 95.08 71.08% 10%;
+    --primary: 103.3 18.0% 80.4%;
+    --primary-foreground: 160.0 27.3% 17.3%;
 
-    --secondary: 0 0% 23.4%;
-    --secondary-foreground: 95.08 71.08% 67.45%;
+    --secondary: 160 18% 16%;
+    --secondary-foreground: 103.3 18.0% 80.4%;
 
-    --accent: 0 0% 27.9%;
-    --accent-foreground: 95.08 71.08% 67.45%;
+    --accent: 160 16% 20%;
+    --accent-foreground: 103.3 18.0% 80.4%;
 
     --destructive: 0 87% 62%;
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 95.08 71.08% 67.45%;
+    --ring: 103.3 18.0% 80.4%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --warning: 54 96% 45%;
 
     --gold: 47.9 95.8% 53.1%;
 
-    --envelope-editor-background: 0 0% 14.9%;
+    --envelope-editor-background: 160 22% 9%;
   }
 }
 
