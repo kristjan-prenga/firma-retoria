@@ -116,6 +116,7 @@ export const DocumentsTable = ({
       },
       {
         // Retoria: sul telefono la colonna ha solo i tre puntini, senza intestazione tagliata
+        id: 'actions',
         header: isMobile ? '' : _(msg`Actions`),
         cell: ({ row }) =>
           (!row.original.deletedAt || isDocumentCompleted(row.original.status)) && (
