@@ -17,6 +17,7 @@ Licenza: AGPL-3.0, come l'originale (vedi `LICENSE`). © Documenso, Inc. per il 
 - Nella pagina di firma i firmatari non vedono nome ed email degli altri firmatari; chi invia il documento scarica il certificato di firma dalla finestra «Scarica file».
 - Frasi delle email senza traduzione italiana completate.
 - Interfaccia per telefono (sotto 768 px, la versione per computer non cambia): editor con barra a icone e pannello dei campi sopra il PDF, campi firma posizionabili con il tocco, destinatari su più righe, tabelle con titolo, stato e menu, barra in alto con il logo, pannello di firma compatto.
+- Editor sul telefono: freccia per tornare ai documenti in alto a sinistra; barra a icone che si apre con le etichette («Mostra le etichette»).
 - Avviso di licenza AGPL-3.0 e link a questo repository in fondo a ogni pagina.
 
 ## Costruire l'immagine
