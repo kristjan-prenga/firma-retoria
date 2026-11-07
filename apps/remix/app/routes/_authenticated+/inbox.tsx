@@ -17,8 +17,8 @@ export default function InboxPage() {
   return (
     <div className="mx-auto w-full max-w-screen-xl px-4 md:px-8">
       <div className="mb-8">
-        <h1 className="flex flex-row items-center gap-2 font-bold text-3xl">
-          <InboxIcon className="h-8 w-8 text-muted-foreground" />
+        <h1 className="flex flex-row items-center gap-2 font-bold text-2xl md:text-3xl">
+          <InboxIcon className="h-6 w-6 shrink-0 text-muted-foreground md:h-8 md:w-8" />
 
           <Trans>Personal Inbox</Trans>
         </h1>
@@ -29,8 +29,8 @@ export default function InboxPage() {
         <OrganisationInvitations className="mt-4" />
       </div>
 
-      <div className="mb-8 flex flex-wrap items-center gap-x-2 gap-y-4">
-        <div className="w-56">
+      <div className="mb-8 flex flex-wrap items-center gap-x-2 gap-y-3 md:gap-y-4">
+        <div className="w-full md:w-56">
           <DocumentSearch />
         </div>
 

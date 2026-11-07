@@ -63,7 +63,7 @@ export const Header = ({ className, fullWidth = false, ...props }: HeaderProps) 
       >
         <Link
           to={getRootHref(params)}
-          className="hidden rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:inline"
+          className="inline rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           <BrandingLogo className="h-6 w-auto" />
         </Link>
@@ -82,11 +82,11 @@ export const Header = ({ className, fullWidth = false, ...props }: HeaderProps) 
           </Link>
         </Button>
 
-        <div className="md:ml-4">
+        <div className="order-last md:order-none md:ml-4">
           <OrgMenuSwitcher />
         </div>
 
-        <div className="flex flex-row items-center space-x-4 md:hidden">
+        <div className="ml-auto flex flex-row items-center space-x-4 md:hidden">
           <button onClick={() => setIsCommandMenuOpen(true)}>
             <SearchIcon className="h-6 w-6 text-muted-foreground" />
           </button>

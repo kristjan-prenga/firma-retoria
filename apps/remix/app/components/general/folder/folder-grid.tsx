@@ -94,7 +94,7 @@ export const FolderGrid = ({ type, parentId }: FolderGridProps) => {
           )}
         </div>
 
-        <div className="flex gap-4 sm:flex-row sm:justify-end">
+        <div className="flex gap-4 max-sm:grid max-sm:grid-cols-2 max-sm:gap-3 sm:flex-row sm:justify-end max-sm:[&>*]:w-full">
           <EnvelopeUploadButton type={type} folderId={parentId || undefined} />
 
           {/* If you delete this, delete the component as well. */}
@@ -126,7 +126,7 @@ export const FolderGrid = ({ type, parentId }: FolderGridProps) => {
           ))}
         </div>
       ) : foldersData && foldersData.folders.length === 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="hidden grid-cols-1 gap-4 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4">
           <FolderCreateDialog
             type={type}
             trigger={

@@ -115,7 +115,8 @@ export const DocumentsTable = ({
         size: 140,
       },
       {
-        header: _(msg`Actions`),
+        // Retoria: sul telefono la colonna ha solo i tre puntini, l'intestazione resta per i lettori di schermo
+        header: () => <span className="max-md:sr-only">{_(msg`Actions`)}</span>,
         cell: ({ row }) =>
           (!row.original.deletedAt || isDocumentCompleted(row.original.status)) && (
             <div className="flex items-center gap-x-4">

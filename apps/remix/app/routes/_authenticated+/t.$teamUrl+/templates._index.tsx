@@ -112,7 +112,7 @@ export default function TemplatesPage() {
 
         <div className="mt-8">
           <div className="flex flex-row items-center">
-            <Avatar className="mr-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
+            <Avatar className="mr-3 hidden h-12 w-12 border-2 border-white border-solid md:flex dark:border-border">
               {team.avatarImageId && <AvatarImage src={formatAvatarUrl(team.avatarImageId)} />}
               <AvatarFallback className="text-muted-foreground text-xs">{team.name.slice(0, 1)}</AvatarFallback>
             </Avatar>
@@ -122,8 +122,8 @@ export default function TemplatesPage() {
             </h1>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-4">
-            <div className="w-56">
+          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-3 md:gap-y-4">
+            <div className="w-full md:w-56">
               <TemplateSearch />
             </div>
 

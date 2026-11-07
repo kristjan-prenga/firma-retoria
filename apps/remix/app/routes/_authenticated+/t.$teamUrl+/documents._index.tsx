@@ -181,25 +181,30 @@ export default function DocumentsPage() {
       <div className="mx-auto w-full max-w-screen-xl px-4 md:px-8">
         <FolderGrid type={FolderType.DOCUMENT} parentId={folderId ?? null} />
 
-        <div className="mt-8 flex flex-row items-center">
-          <Avatar className="mr-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
+        <div className="mt-6 flex flex-row items-center md:mt-8">
+          <Avatar className="mr-3 hidden h-12 w-12 border-2 border-white border-solid md:flex dark:border-border">
             {team.avatarImageId && <AvatarImage src={formatAvatarUrl(team.avatarImageId)} />}
             <AvatarFallback className="text-muted-foreground text-xs">{team.name.slice(0, 1)}</AvatarFallback>
           </Avatar>
 
-          <h2 className="font-semibold text-4xl">
+          <h2 className="font-semibold text-3xl md:text-4xl">
             <Trans>Documents</Trans>
           </h2>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-4">
-          <div className="w-56">
+        <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-3 md:mt-8 md:gap-y-4">
+          <div className="w-full md:w-56">
             <DocumentSearch />
           </div>
 
           <DocumentsTableStatusFilter stats={stats} />
 
-          {team && <DocumentsTableSenderFilter teamId={team.id} />}
+          {/* Retoria: sul telefono il filtro per mittente si nasconde, così i filtri stanno su una riga */}
+          {team && (
+            <div className="hidden md:block">
+              <DocumentsTableSenderFilter teamId={team.id} />
+            </div>
+          )}
 
           <DocumentsTablePeriodFilter />
 
