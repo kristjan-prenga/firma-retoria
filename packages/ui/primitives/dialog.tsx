@@ -20,8 +20,7 @@ const DialogPortal = ({
     <div
       // Retoria: sul telefono le finestre «start» salgono dal basso come pannello; da sm in su restano centrate.
       className={cn('fixed inset-0 z-[1000] flex justify-center sm:items-center', {
-        'items-end': position === 'start',
-        'items-end': position === 'end',
+        'items-end': position === 'start' || position === 'end',
         'items-center': position === 'center',
       })}
     >
