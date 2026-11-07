@@ -18,8 +18,9 @@ const DialogPortal = ({
 }: DialogPrimitive.DialogPortalProps & { position?: 'start' | 'end' | 'center' }) => (
   <DialogPrimitive.Portal {...props}>
     <div
+      // Retoria: sul telefono le finestre «start» salgono dal basso come pannello; da sm in su restano centrate.
       className={cn('fixed inset-0 z-[1000] flex justify-center sm:items-center', {
-        'items-start': position === 'start',
+        'items-end': position === 'start',
         'items-end': position === 'end',
         'items-center': position === 'center',
       })}
@@ -61,10 +62,9 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 fixed z-50 grid w-full animate-in gap-4 border bg-background p-6 shadow-lg focus:outline-none sm:max-w-lg sm:rounded-lg',
+        'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 fixed z-50 grid max-h-[90dvh] w-full animate-in gap-4 overflow-y-auto border bg-background p-6 shadow-lg focus:outline-none sm:max-h-none sm:max-w-lg sm:overflow-visible sm:rounded-lg',
         {
-          'rounded-b-xl': position === 'start',
-          'rounded-t-xl': position === 'end',
+          'rounded-t-2xl pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-6': position === 'start' || position === 'end',
         },
         className,
       )}
