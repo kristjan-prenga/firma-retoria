@@ -9500,7 +9500,7 @@ msgstr "Stato di lettura"
 
 #: apps/remix/app/components/general/document-signing/document-signing-disclosure.tsx
 msgid "Read the full <0>signature disclosure</0>."
-msgstr "Leggi l'intera <0>divulgazione della firma</0>."
+msgstr "Leggi l'intera <0>informativa sulla firma</0>."
 
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx

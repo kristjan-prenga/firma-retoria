@@ -30,7 +30,10 @@ export type DocumentShareButtonProps = HTMLAttributes<HTMLButtonElement> & {
   trigger?: (_props: { loading: boolean; disabled: boolean }) => React.ReactNode;
 };
 
-export const DocumentShareButton = ({ token, documentId, className, trigger }: DocumentShareButtonProps) => {
+// Retoria: niente pulsante «Condividi» (serviva a pubblicizzare Documenso sui social); l'originale resta sotto.
+export const DocumentShareButton = (_props: DocumentShareButtonProps) => null;
+
+const DocumentShareButtonDocumenso = ({ token, documentId, className, trigger }: DocumentShareButtonProps) => {
   const { _ } = useLingui();
   const { toast } = useToast();
 

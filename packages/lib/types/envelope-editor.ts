@@ -143,7 +143,7 @@ export const DEFAULT_EDITOR_CONFIG: EnvelopeEditorConfig = {
     allowReplace: true,
   },
   recipients: {
-    allowAIDetection: true,
+    allowAIDetection: false, // Retoria: niente IA (i documenti non vanno a servizi esterni)
     allowConfigureSigningOrder: true,
     allowConfigureDictateNextSigner: true,
 
@@ -153,7 +153,7 @@ export const DEFAULT_EDITOR_CONFIG: EnvelopeEditorConfig = {
     allowAssistantRole: true,
   },
   fields: {
-    allowAIDetection: true,
+    allowAIDetection: false, // Retoria: niente IA (i documenti non vanno a servizi esterni)
   },
 };
 
