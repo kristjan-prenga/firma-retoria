@@ -83,7 +83,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
         )}
 
         {recipients.map((recipient, i) => (
-          <li key={recipient.id} className="flex items-center justify-between px-4 py-2.5 text-sm">
+          <li key={recipient.id} className="flex items-center justify-between gap-2 px-4 py-2.5 text-sm">
             <AvatarWithText
               avatarFallback={recipient.email.slice(0, 1).toUpperCase()}
               primaryText={<p className="text-muted-foreground text-sm">{recipient.email}</p>}
@@ -94,7 +94,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
               }
             />
 
-            <div className="flex flex-row items-center">
+            <div className="flex shrink-0 flex-row items-center whitespace-nowrap">
               {envelope.status !== DocumentStatus.DRAFT && recipient.signingStatus === SigningStatus.SIGNED && (
                 <Badge variant="default">
                   {match(recipient.role)
