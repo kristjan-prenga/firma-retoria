@@ -32,7 +32,7 @@ export const run = async ({ payload, io }: { payload: TSendAccountDisabledEmailJ
 
   const assetBaseUrl = NEXT_PUBLIC_WEBAPP_URL() || 'http://localhost:3000';
 
-  const i18n = await getI18nInstance();
+  const i18n = await getI18nInstance('it') // Retoria: oggetto in italiano;
 
   await io.runTask('send-account-disabled-user-email', async () => {
     const template = createElement(AccountDisabledEmailTemplate, {

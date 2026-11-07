@@ -1827,7 +1827,7 @@ msgstr "Importo"
 
 #: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
 msgid "An account was automatically disabled"
-msgstr ""
+msgstr "Un account è stato disattivato automaticamente"
 
 #: packages/email/templates/document-super-delete.tsx
 msgid "An admin has deleted your document \"{documentName}\"."
@@ -8871,7 +8871,7 @@ msgstr "Richiesta di reimpostazione password"
 
 #: packages/lib/server-only/auth/send-reset-password.ts
 msgid "Password Reset Success!"
-msgstr ""
+msgstr "Password reimpostata!"
 
 #: packages/email/templates/reset-password.tsx
 msgid "Password Reset Successful"
@@ -15915,7 +15915,7 @@ msgstr "I tuoi modelli di firma diretta"
 #: packages/email/templates/account-disabled.tsx
 #: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
 msgid "Your Documenso account has been disabled"
-msgstr "Your Firma Retoria account has been disabled"
+msgstr "Il tuo account Firma Retoria è stato disattivato"
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "Your document content will be sent securely to our AI provider solely for detection and will not be stored or used for training."

@@ -49,7 +49,7 @@ export const sendForgotPassword = async ({ userId }: SendForgotPasswordOptions) 
     renderEmailWithI18N(template, { plainText: true }),
   ]);
 
-  const i18n = await getI18nInstance();
+  const i18n = await getI18nInstance('it') // Retoria: oggetto in italiano;
 
   return await mailer.sendMail({
     to: {

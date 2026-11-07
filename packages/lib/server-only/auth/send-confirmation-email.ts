@@ -50,7 +50,7 @@ export const sendConfirmationEmail = async ({ userId }: SendConfirmationEmailPro
     renderEmailWithI18N(confirmationTemplate, { plainText: true }),
   ]);
 
-  const i18n = await getI18nInstance();
+  const i18n = await getI18nInstance('it') // Retoria: oggetto in italiano;
 
   return mailer.sendMail({
     to: {

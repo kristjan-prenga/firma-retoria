@@ -52,7 +52,7 @@ export const run = async ({ payload, io }: { payload: TSendAdminUserCreatedEmail
     renderEmailWithI18N(emailTemplate, { plainText: true }),
   ]);
 
-  const i18n = await getI18nInstance();
+  const i18n = await getI18nInstance('it') // Retoria: oggetto in italiano;
 
   return mailer.sendMail({
     to: {

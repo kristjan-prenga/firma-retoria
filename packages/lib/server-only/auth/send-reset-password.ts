@@ -37,7 +37,7 @@ export const sendResetPassword = async ({ userId, source }: SendResetPasswordOpt
     renderEmailWithI18N(template, { plainText: true }),
   ]);
 
-  const i18n = await getI18nInstance();
+  const i18n = await getI18nInstance('it') // Retoria: oggetto in italiano;
 
   const subject = match(source)
     .with('RESET', () => i18n._(msg`Password Reset Success!`))

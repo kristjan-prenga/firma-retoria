@@ -6,7 +6,10 @@ export interface TemplateDocumentImageProps {
   className?: string;
 }
 
-export const TemplateDocumentImage = ({ assetBaseUrl, className }: TemplateDocumentImageProps) => {
+// Retoria: niente illustrazione grande nelle email, è il segnale più «da newsletter» per la scheda Promozioni di Gmail.
+export const TemplateDocumentImage = (_props: TemplateDocumentImageProps) => null;
+
+const TemplateDocumentImageDocumenso = ({ assetBaseUrl, className }: TemplateDocumentImageProps) => {
   return (
     <Section className={className}>
       <Row className="table-fixed">
