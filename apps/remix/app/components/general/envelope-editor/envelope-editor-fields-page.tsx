@@ -203,8 +203,8 @@ export const EnvelopeEditorFieldsPage = () => {
   };
 
   return (
-    <div className="relative flex h-full">
-      <div className="flex h-full w-full flex-col overflow-y-auto px-2" ref={scrollableContainerRef}>
+    <div className="relative flex h-full flex-col md:flex-row">
+      <div className="flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-2 md:h-full md:flex-initial" ref={scrollableContainerRef}>
         {/* Horizontal envelope item selector */}
         <EnvelopeRendererFileSelector
           className="px-0"
@@ -308,7 +308,7 @@ export const EnvelopeEditorFieldsPage = () => {
 
       {/* Right Section - Form Fields Panel */}
       {currentEnvelopeItem && envelope.recipients.length > 0 && (
-        <div className="sticky top-0 h-full w-80 flex-shrink-0 overflow-y-auto border-border border-l bg-background py-4">
+        <div className="order-first max-h-[45%] w-full flex-shrink-0 overflow-y-auto border-border border-b bg-background py-4 md:sticky md:top-0 md:order-none md:h-full md:max-h-none md:w-80 md:border-b-0 md:border-l">
           {/* Recipient selector section. */}
           <section className="px-4">
             <h3 className="mb-2 font-semibold text-foreground text-sm">

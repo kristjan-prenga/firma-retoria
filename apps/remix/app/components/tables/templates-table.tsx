@@ -1,5 +1,6 @@
 import { useLimits } from '@documenso/ee/server-only/limits/provider/client';
 import { useUpdateSearchParams } from '@documenso/lib/client-only/hooks/use-update-search-params';
+import { useWindowSize } from '@documenso/lib/client-only/hooks/use-window-size';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { formatTemplatesPath } from '@documenso/lib/utils/teams';
 import type { TFindTemplatesResponse } from '@documenso/trpc/server/template-router/schema';
@@ -57,6 +58,10 @@ export const TemplatesTable = ({
   const [isPending, startTransition] = useTransition();
 
   const updateSearchParams = useUpdateSearchParams();
+
+  // Retoria: sul telefono restano solo titolo, stato e azioni, senza scorrere di lato.
+  const { width: windowWidth } = useWindowSize();
+  const isMobile = windowWidth > 0 && windowWidth < 768;
 
   const formatTemplateLink = (row: TemplatesTableRow) => {
     const path = formatTemplatesPath(team.url);
@@ -268,6 +273,7 @@ export const TemplatesTable = ({
         currentPage={results.currentPage}
         totalPages={results.totalPages}
         onPaginationChange={onPaginationChange}
+        columnVisibility={{ createdAt: !isMobile, type: !isMobile }}
         enableRowSelection={enableSelection}
         rowSelection={rowSelection}
         onRowSelectionChange={onRowSelectionChange}

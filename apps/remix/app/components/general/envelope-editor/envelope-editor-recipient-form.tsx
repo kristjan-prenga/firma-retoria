@@ -376,7 +376,7 @@ export const EnvelopeEditorRecipientForm = () => {
 
   return (
     <Card backdropBlur={false} className="border">
-      <CardHeader className="flex flex-row justify-between">
+      <CardHeader className="flex flex-col gap-3 md:flex-row md:justify-between md:gap-0">
         <div>
           <CardTitle>
             <Trans>Recipients</Trans>

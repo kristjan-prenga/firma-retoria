@@ -126,11 +126,13 @@ export const DocumentAttachmentsPopover = ({
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" className={cn('gap-2', buttonClassName)} size={buttonSize}>
+        <Button variant="outline" className={cn('gap-2', buttonClassName)} size={buttonSize} aria-label={_(msg`Attachments`)}>
           <Paperclip className="h-4 w-4" />
 
           <span>
-            <Trans>Attachments</Trans>
+            <span className="hidden md:inline">
+              <Trans>Attachments</Trans>
+            </span>
             {attachments && attachments.data.length > 0 && <span className="ml-1">({attachments.data.length})</span>}
           </span>
         </Button>

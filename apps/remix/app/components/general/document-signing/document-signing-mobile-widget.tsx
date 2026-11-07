@@ -54,7 +54,7 @@ export const DocumentSigningMobileWidget = () => {
                 )}
 
                 <div>
-                  <h2 className="font-semibold text-foreground text-lg">
+                  <h2 className="font-semibold text-base text-foreground">
                     {match(recipient.role)
                       .with(RecipientRole.VIEWER, () => <Trans>View Document</Trans>)
                       .with(RecipientRole.SIGNER, () => <Trans>Sign Document</Trans>)
@@ -63,7 +63,7 @@ export const DocumentSigningMobileWidget = () => {
                       .otherwise(() => null)}
                   </h2>
 
-                  <p className="-mt-0.5 text-muted-foreground text-sm">
+                  <p className="-mt-0.5 text-muted-foreground text-xs">
                     {recipientFieldsRemaining.length === 0 ? (
                       match(recipient.role)
                         .with(RecipientRole.VIEWER, () => <Trans>Please mark as viewed to complete</Trans>)

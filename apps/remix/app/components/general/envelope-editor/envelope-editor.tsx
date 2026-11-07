@@ -1,4 +1,5 @@
 import type { EnvelopeEditorStep } from '@documenso/lib/client-only/providers/envelope-editor-provider';
+import { useWindowSize } from '@documenso/lib/client-only/hooks/use-window-size';
 import { useCurrentEnvelopeEditor } from '@documenso/lib/client-only/providers/envelope-editor-provider';
 import { mapSecondaryIdToTemplateId } from '@documenso/lib/utils/envelope';
 import { cn } from '@documenso/ui/lib/utils';
@@ -89,8 +90,11 @@ export const EnvelopeEditor = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // Retoria: sul telefono (sotto 768 px) la barra laterale resta ridotta a icone, con tutti i passi e le azioni.
+  const { width: windowWidth } = useWindowSize();
+
   const {
-    general: { minimizeLeftSidebar, allowUploadAndRecipientStep, allowAddFieldsStep, allowPreviewStep },
+    general: { minimizeLeftSidebar: minimizeLeftSidebarConfig, allowUploadAndRecipientStep, allowAddFieldsStep, allowPreviewStep },
     actions: {
       allowDistributing,
       allowDirectLink,
@@ -100,6 +104,8 @@ export const EnvelopeEditor = () => {
       allowDeletion,
     },
   } = editorConfig;
+
+  const minimizeLeftSidebar = minimizeLeftSidebarConfig || (windowWidth > 0 && windowWidth < 768);
 
   const envelopeEditorSteps = useMemo(() => {
     const steps: EnvelopeEditorStepData[] = [];
@@ -175,11 +181,11 @@ export const EnvelopeEditor = () => {
   const currentStepData = envelopeEditorSteps.find((step) => step.id === searchParamsStep) || envelopeEditorSteps[0];
 
   return (
-    <div className="h-screen w-screen bg-envelope-editor-background">
+    <div className="h-dvh w-screen bg-envelope-editor-background md:h-screen">
       <EnvelopeEditorHeader />
 
       {/* Main Content Area */}
-      <div className="flex h-[calc(100vh-4rem)] w-screen">
+      <div className="flex h-[calc(100dvh-4rem)] w-screen md:h-[calc(100vh-4rem)]">
         {/* Left Section - Step Navigation */}
         <div
           className={cn('flex w-80 flex-shrink-0 flex-col overflow-y-auto border-border border-r bg-background py-4', {

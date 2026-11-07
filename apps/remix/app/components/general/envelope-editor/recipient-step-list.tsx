@@ -298,7 +298,7 @@ export const RecipientStepList = ({ showAdvancedSettings }: RecipientStepListPro
   return (
     <div>
       {!showAdvancedSettings && !isSequential && (
-        <div className="mb-1 flex flex-row gap-x-2 text-sm">
+        <div className="mb-1 hidden flex-row gap-x-2 text-sm md:flex">
           <span className="w-full">
             <Trans>Email</Trans>
           </span>

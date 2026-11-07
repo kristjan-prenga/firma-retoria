@@ -1,4 +1,5 @@
 import { useUpdateSearchParams } from '@documenso/lib/client-only/hooks/use-update-search-params';
+import { useWindowSize } from '@documenso/lib/client-only/hooks/use-window-size';
 import { useSession } from '@documenso/lib/client-only/providers/session';
 import { isDocumentCompleted } from '@documenso/lib/utils/document';
 import { trpc } from '@documenso/trpc/react';
@@ -36,6 +37,10 @@ export const InboxTable = () => {
   const [isPending, startTransition] = useTransition();
 
   const updateSearchParams = useUpdateSearchParams();
+
+  // Retoria: sul telefono restano solo titolo, stato e azioni, senza scorrere di lato.
+  const { width: windowWidth } = useWindowSize();
+  const isMobile = windowWidth > 0 && windowWidth < 768;
 
   const [findInboxSearchParams] = useQueryStates(inboxSearchParams, {
     history: 'push',
@@ -122,7 +127,9 @@ export const InboxTable = () => {
         totalPages={results.totalPages}
         onPaginationChange={onPaginationChange}
         columnVisibility={{
-          sender: team !== undefined,
+          sender: team !== undefined && !isMobile,
+          createdAt: !isMobile,
+          recipient: !isMobile,
         }}
         error={{
           enable: isLoadingError || false,

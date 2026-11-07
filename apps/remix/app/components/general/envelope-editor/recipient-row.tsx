@@ -73,7 +73,7 @@ const RecipientRowInner = ({
 
   return (
     <fieldset data-native-id={signer.id} disabled={isSubmitting || !canBeModified} className="py-1">
-      <div className="flex flex-row items-center gap-x-2">
+      <div className="flex flex-row flex-wrap items-center gap-x-2 gap-y-2 md:flex-nowrap">
         {isSequential && !isCcRecipient(signer) && (
           <span
             {...(dragHandleProps ?? {})}

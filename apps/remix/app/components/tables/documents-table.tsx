@@ -1,4 +1,5 @@
 import { useUpdateSearchParams } from '@documenso/lib/client-only/hooks/use-update-search-params';
+import { useWindowSize } from '@documenso/lib/client-only/hooks/use-window-size';
 import { useSession } from '@documenso/lib/client-only/providers/session';
 import { isDocumentCompleted } from '@documenso/lib/utils/document';
 import { findRecipientByEmail } from '@documenso/lib/utils/recipients';
@@ -52,6 +53,10 @@ export const DocumentsTable = ({
   const [isPending, startTransition] = useTransition();
 
   const updateSearchParams = useUpdateSearchParams();
+
+  // Retoria: sul telefono restano solo titolo, stato e azioni, senza scorrere di lato.
+  const { width: windowWidth } = useWindowSize();
+  const isMobile = windowWidth > 0 && windowWidth < 768;
 
   const columns = useMemo(() => {
     const cols: DataTableColumnDef<DocumentsTableRow>[] = [];
@@ -153,7 +158,9 @@ export const DocumentsTable = ({
         totalPages={results.totalPages}
         onPaginationChange={onPaginationChange}
         columnVisibility={{
-          sender: team !== undefined,
+          sender: team !== undefined && !isMobile,
+          createdAt: !isMobile,
+          recipient: !isMobile,
         }}
         error={{
           enable: isLoadingError || false,
