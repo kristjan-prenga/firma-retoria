@@ -61,7 +61,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 fixed z-50 grid max-h-[90dvh] w-full animate-in gap-4 overflow-y-auto border bg-background p-6 shadow-lg focus:outline-none sm:max-h-none sm:max-w-lg sm:overflow-visible sm:rounded-lg',
+        'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 fixed z-50 grid max-h-[90dvh] w-full animate-in gap-4 overflow-y-auto border bg-background p-6 shadow-lg focus:outline-none sm:max-w-lg sm:rounded-lg [@media(min-width:640px)_and_(min-height:641px)]:max-h-none [@media(min-width:640px)_and_(min-height:641px)]:overflow-visible',
         {
           'rounded-t-2xl pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-6': position === 'start' || position === 'end',
         },
