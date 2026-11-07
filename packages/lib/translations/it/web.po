@@ -16260,3 +16260,7 @@ msgstr ""
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Zoom out"
 msgstr ""
+
+#: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
+msgid "Show labels"
+msgstr "Mostra le etichette"

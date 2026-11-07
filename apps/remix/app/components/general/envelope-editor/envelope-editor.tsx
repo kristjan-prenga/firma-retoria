@@ -13,6 +13,8 @@ import { EnvelopeType } from '@prisma/client';
 import { motion } from 'framer-motion';
 import {
   ArrowLeftIcon,
+  PanelLeftCloseIcon,
+  PanelLeftOpenIcon,
   CopyPlusIcon,
   DownloadCloudIcon,
   EyeIcon,
@@ -92,6 +94,9 @@ export const EnvelopeEditor = () => {
 
   // Retoria: sul telefono (sotto 768 px) la barra laterale resta ridotta a icone, con tutti i passi e le azioni.
   const { width: windowWidth } = useWindowSize();
+  const isMobileWidth = windowWidth > 0 && windowWidth < 768;
+  // Sul telefono la barra a icone si apre sopra il contenuto per mostrare le etichette.
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   const {
     general: { minimizeLeftSidebar: minimizeLeftSidebarConfig, allowUploadAndRecipientStep, allowAddFieldsStep, allowPreviewStep },
@@ -105,7 +110,8 @@ export const EnvelopeEditor = () => {
     },
   } = editorConfig;
 
-  const minimizeLeftSidebar = minimizeLeftSidebarConfig || (windowWidth > 0 && windowWidth < 768);
+  const minimizeLeftSidebar = minimizeLeftSidebarConfig || (isMobileWidth && !isMobileSidebarOpen);
+  const isMobileSidebarOverlay = isMobileWidth && isMobileSidebarOpen && !minimizeLeftSidebarConfig;
 
   const envelopeEditorSteps = useMemo(() => {
     const steps: EnvelopeEditorStepData[] = [];
@@ -185,13 +191,48 @@ export const EnvelopeEditor = () => {
       <EnvelopeEditorHeader />
 
       {/* Main Content Area */}
-      <div className="flex h-[calc(100dvh-4rem)] w-screen md:h-[calc(100vh-4rem)]">
+      <div className="relative flex h-[calc(100dvh-4rem)] w-screen md:h-[calc(100vh-4rem)]">
+        {/* Retoria: sul telefono, a barra aperta, segnaposto per non spostare il contenuto e velo che la chiude */}
+        {isMobileSidebarOverlay && (
+          <>
+            <div className="w-14 flex-shrink-0" />
+            <button
+              type="button"
+              aria-label={t(msg`Close`)}
+              className="absolute inset-0 z-30 bg-foreground/20"
+              onClick={() => setIsMobileSidebarOpen(false)}
+            />
+          </>
+        )}
+
         {/* Left Section - Step Navigation */}
         <div
           className={cn('flex w-80 flex-shrink-0 flex-col overflow-y-auto border-border border-r bg-background py-4', {
             'w-14': minimizeLeftSidebar,
+            'absolute inset-y-0 left-0 z-40 w-72 shadow-xl': isMobileSidebarOverlay,
           })}
+          onClick={(event) => {
+            // Sul telefono, scelto un passo o un'azione, la barra si richiude.
+            if (isMobileSidebarOverlay && (event.target as HTMLElement).closest('a, button')) {
+              setIsMobileSidebarOpen(false);
+            }
+          }}
         >
+          {isMobileWidth && !minimizeLeftSidebarConfig && minimizeLeftSidebar && (
+            <div className="mb-3 flex justify-center px-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-9 w-9 p-0"
+                aria-label={t(msg`Show labels`)}
+                title={t(msg`Show labels`)}
+                onClick={() => setIsMobileSidebarOpen(true)}
+              >
+                <PanelLeftOpenIcon className="h-5 w-5" />
+              </Button>
+            </div>
+          )}
+
           {/* Left section step selector. */}
           {minimizeLeftSidebar ? (
             <div className="flex justify-center px-4">
@@ -238,10 +279,18 @@ export const EnvelopeEditor = () => {
               <h3 className="flex items-end justify-between font-semibold text-foreground text-sm">
                 {isDocument ? <Trans>Document Editor</Trans> : <Trans>Template Editor</Trans>}
 
-                <span className="ml-2 rounded border bg-muted/50 px-2 py-0.5 text-muted-foreground text-xs">
-                  <Trans context="The step counter">
-                    Step {currentStepData.order}/{envelopeEditorSteps.length}
-                  </Trans>
+                <span className="ml-2 flex items-center gap-1">
+                  <span className="rounded border bg-muted/50 px-2 py-0.5 text-muted-foreground text-xs">
+                    <Trans context="The step counter">
+                      Step {currentStepData.order}/{envelopeEditorSteps.length}
+                    </Trans>
+                  </span>
+
+                  {isMobileSidebarOverlay && (
+                    <Button variant="ghost" size="sm" className="h-7 w-7 p-0" aria-label={t(msg`Close`)}>
+                      <PanelLeftCloseIcon className="h-4 w-4" />
+                    </Button>
+                  )}
                 </span>
               </h3>
 
@@ -499,7 +548,8 @@ export const EnvelopeEditor = () => {
           {/* Footer of left sidebar. */}
           {!editorConfig.embedded && (
             <div
-              className={cn('mt-auto px-4', {
+              // Retoria: sul telefono «Torna ai documenti» è la freccia in alto a sinistra dell'intestazione
+              className={cn('mt-auto hidden px-4 md:block', {
                 'px-2': minimizeLeftSidebar,
               })}
             >

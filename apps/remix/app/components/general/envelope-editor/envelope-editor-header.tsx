@@ -7,6 +7,7 @@ import { Trans, useLingui } from '@lingui/react/macro';
 import { DocumentStatus, EnvelopeType, TemplateType } from '@prisma/client';
 import {
   AlertTriangleIcon,
+  ArrowLeftIcon,
   Building2Icon,
   Globe2Icon,
   LockIcon,
@@ -71,6 +72,17 @@ export default function EnvelopeEditorHeader() {
     <nav className="w-full border-border border-b bg-background px-4 py-3 md:px-6">
       <div className="flex items-center justify-between gap-4">
         <div className="flex min-w-0 flex-1 items-center space-x-2 md:space-x-4">
+          {/* Retoria: sul telefono la freccia per tornare ai documenti sta in alto a sinistra */}
+          {!isEmbedded && (
+            <Link
+              to={relativePath.basePath}
+              aria-label={isDocument ? t`Return to documents` : t`Return to templates`}
+              className="-ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground md:hidden"
+            >
+              <ArrowLeftIcon className="h-5 w-5" />
+            </Link>
+          )}
+
           {editorConfig.embedded?.customBrandingLogo ? (
             <img src={`/api/branding/logo/team/${envelope.teamId}`} alt="Logo" className="hidden h-6 w-auto md:block" />
           ) : (
