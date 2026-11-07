@@ -6,7 +6,7 @@ import { Undo2 } from 'lucide-react';
 import type { StrokeOptions } from 'perfect-freehand';
 import { getStroke } from 'perfect-freehand';
 import type { MouseEvent, PointerEvent, TouchEvent } from 'react';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { cn } from '../../lib/utils';
 import { checkSignatureValidity, getSvgPathFromStroke } from './helper';
@@ -232,6 +232,60 @@ export const SignaturePadDraw = ({ className, value, onChange, ...props }: Signa
       img.src = value;
     }
   });
+
+  // Retoria: se il riquadro cambia misura (telefono girato in orizzontale) la tela interna si adegua alla
+  // nuova larghezza; prima restava quella di apertura, veniva stirata e il tratto si allontanava dal dito.
+  useEffect(() => {
+    const $canvas = $el.current;
+
+    if (!$canvas || typeof ResizeObserver === 'undefined') {
+      return;
+    }
+
+    const rescale = (source: CanvasImageSource, fromWidth: number, fromHeight: number, toWidth: number, toHeight: number) => {
+      const $tmp = document.createElement('canvas');
+      $tmp.width = toWidth;
+      $tmp.height = toHeight;
+      $tmp.getContext('2d')?.drawImage(source, 0, 0, fromWidth, fromHeight, 0, 0, toWidth, toHeight);
+      return $tmp;
+    };
+
+    const observer = new ResizeObserver(() => {
+      const newWidth = Math.round($canvas.clientWidth * SIGNATURE_CANVAS_DPI);
+      const newHeight = Math.round($canvas.clientHeight * SIGNATURE_CANVAS_DPI);
+      const { width: oldWidth, height: oldHeight } = $canvas;
+
+      if (!newWidth || !newHeight || !oldWidth || !oldHeight || (newWidth === oldWidth && newHeight === oldHeight)) {
+        return;
+      }
+
+      const drawing = rescale($canvas, oldWidth, oldHeight, newWidth, newHeight);
+
+      if ($imageData.current) {
+        const $base = document.createElement('canvas');
+        $base.width = oldWidth;
+        $base.height = oldHeight;
+        $base.getContext('2d')?.putImageData($imageData.current, 0, 0);
+        $imageData.current =
+          rescale($base, oldWidth, oldHeight, newWidth, newHeight)
+            .getContext('2d')
+            ?.getImageData(0, 0, newWidth, newHeight) ?? null;
+      }
+
+      $canvas.width = newWidth;
+      $canvas.height = newHeight;
+      $canvas.getContext('2d')?.drawImage(drawing, 0, 0);
+
+      const scaleX = newWidth / oldWidth;
+      const scaleY = newHeight / oldHeight;
+
+      setLines((prev) => prev.map((line) => line.map((p) => new Point(p.x * scaleX, p.y * scaleY, p.timestamp))));
+    });
+
+    observer.observe($canvas);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className={cn('h-full w-full', className)}>
