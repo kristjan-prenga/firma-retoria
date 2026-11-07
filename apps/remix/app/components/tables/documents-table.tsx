@@ -115,8 +115,8 @@ export const DocumentsTable = ({
         size: 140,
       },
       {
-        // Retoria: sul telefono la colonna ha solo i tre puntini, l'intestazione resta per i lettori di schermo
-        header: () => <span className="max-md:sr-only">{_(msg`Actions`)}</span>,
+        // Retoria: sul telefono la colonna ha solo i tre puntini, senza intestazione tagliata
+        header: isMobile ? '' : _(msg`Actions`),
         cell: ({ row }) =>
           (!row.original.deletedAt || isDocumentCompleted(row.original.status)) && (
             <div className="flex items-center gap-x-4">
@@ -134,7 +134,7 @@ export const DocumentsTable = ({
     );
 
     return cols;
-  }, [team, onMoveDocument, enableSelection]);
+  }, [team, onMoveDocument, enableSelection, isMobile]);
 
   const onPaginationChange = (page: number, perPage: number) => {
     startTransition(() => {
