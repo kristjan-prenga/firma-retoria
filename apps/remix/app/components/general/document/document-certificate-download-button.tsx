@@ -36,7 +36,7 @@ export const DocumentCertificateDownloadButton = ({
 
       downloadFile({
         data: blob,
-        filename: `${envelopeTitle} - Certificate.pdf`,
+        filename: `${envelopeTitle} - Certificato di firma.pdf`,
       });
     } catch (error) {
       console.error(error);

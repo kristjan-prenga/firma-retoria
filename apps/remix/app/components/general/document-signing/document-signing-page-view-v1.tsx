@@ -359,7 +359,7 @@ export const DocumentSigningPageViewV1 = ({
         <DocumentReadOnlyFields
           documentMeta={documentMeta || undefined}
           fields={completedFields}
-          showRecipientTooltip={true}
+          showRecipientTooltip={false} // Retoria: i firmatari non vedono nome ed email degli altri
         />
 
         {recipient.role !== RecipientRole.ASSISTANT && (

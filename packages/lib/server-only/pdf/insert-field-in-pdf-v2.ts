@@ -1,6 +1,7 @@
 // sort-imports-ignore
 import '../konva/skia-backend';
 
+import { FieldType } from '@prisma/client';
 import type { FieldWithSignature } from '@documenso/prisma/types/field-with-signature';
 import type { Canvas } from '@documenso/skia-canvas';
 import Konva from 'konva';
@@ -38,6 +39,29 @@ export const insertFieldInPDFV2 = async ({ pageWidth, pageHeight, fields }: Inse
       pageHeight,
       mode: 'export',
     });
+
+    // Retoria: sotto ogni firma l'ID della firma (lo stesso del certificato di firma) e la data, ora di Roma.
+    // shortcut: fuso orario fisso Europe/Rome, passare documentMeta.timezone se arrivano utenti fuori Italia.
+    if (field.type === FieldType.SIGNATURE && field.signature) {
+      const quando = new Intl.DateTimeFormat('it-IT', {
+        timeZone: 'Europe/Rome',
+        dateStyle: 'short',
+        timeStyle: 'short',
+      }).format(field.signature.created);
+
+      layer.add(
+        new Konva.Text({
+          x: pageWidth * (Number(field.positionX) / 100),
+          y: pageHeight * ((Number(field.positionY) + Number(field.height)) / 100) + 1,
+          text: `ID firma ${field.secondaryId.toUpperCase()}\nFirmato il ${quando}`,
+          fontFamily: 'Inter',
+          fontSize: 5.5,
+          lineHeight: 1.2,
+          fill: '#62635a',
+          wrap: 'none',
+        }),
+      );
+    }
   }
 
   stage.add(layer);

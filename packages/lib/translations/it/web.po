@@ -503,7 +503,7 @@ msgstr "{recipientCount} destinatari"
 
 #: packages/email/template-components/template-recipient-removed-by-admin.tsx
 msgid "{recipientLabel} has been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender."
-msgstr ""
+msgstr "{recipientLabel} è stato rimosso dal documento \"{documentName}\" da un amministratore, di solito su richiesta di chi ha inviato il documento."
 
 #: packages/email/templates/document-created-from-direct-template.tsx
 msgid "{recipientName} {action} a document by using one of your direct links"
@@ -511,7 +511,7 @@ msgstr "{recipientName} {action} un documento utilizzando uno dei tuoi link dire
 
 #: packages/email/templates/recipient-removed-by-admin.tsx
 msgid "{recipientName} has been removed from the document \"{documentName}\" by an administrator."
-msgstr ""
+msgstr "{recipientName} è stato rimosso dal documento \"{documentName}\" da un amministratore."
 
 #: packages/email/templates/document-rejected.tsx
 msgid "{recipientName} has rejected the document '{documentName}'"
@@ -1136,7 +1136,7 @@ msgstr "È stata inviata un'e-mail per il reset della password; se hai un accoun
 #: packages/email/template-components/template-recipient-removed-by-admin.tsx
 #: packages/lib/jobs/definitions/emails/send-admin-recipient-removed-emails.handler.ts
 msgid "A recipient has been removed from your document"
-msgstr ""
+msgstr "Un destinatario è stato rimosso dal tuo documento"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -6823,7 +6823,7 @@ msgstr "Se ci sono problemi con il tuo abbonamento, contattaci a <0>{SUPPORT_EMA
 
 #: packages/email/templates/reset-password.tsx
 msgid "If this was you, no action is needed. If it wasn't, reset your password immediately and <0>contact us</0>."
-msgstr ""
+msgstr "Se sei stato tu, non devi fare nulla. Se non sei stato tu, reimposta subito la password e <0>contattaci</0>."
 
 #: apps/remix/app/routes/embed+/v2+/authoring+/_layout.tsx
 msgid "If you are using staging, ensure that you have set the host prop on the embedding component to the staging domain (https://stg-app.documenso.com)"
@@ -6835,7 +6835,7 @@ msgstr ""
 
 #: packages/email/template-components/template-account-disabled.tsx
 msgid "If you believe this was a mistake, contact us at <0>{supportEmail}</0>."
-msgstr ""
+msgstr "Se pensi che sia un errore, scrivici a <0>{supportEmail}</0>."
 
 #: apps/remix/app/routes/_recipient+/report.$token.tsx
 msgid "If you did not expect this email or believe it is spam, you can report the sender to our team for review."
@@ -6863,11 +6863,11 @@ msgstr "Se pensi di aver bisogno di limiti più alti, contatta l'assistenza all'
 
 #: packages/email/templates/organisation-limits-updated.tsx
 msgid "If you have any questions, please contact support at {SUPPORT_EMAIL}."
-msgstr ""
+msgstr "Per qualsiasi domanda scrivi a {SUPPORT_EMAIL}."
 
 #: packages/email/templates/organisation-limits-updated.tsx
 msgid "If you recently received an email regarding your usage limits, this change was made in response to that."
-msgstr ""
+msgstr "Se di recente hai ricevuto un'email sui limiti di utilizzo, questa modifica ne è la conseguenza."
 
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
 msgid "If your authenticator app does not support QR codes, you can use the following code instead:"
@@ -8440,7 +8440,7 @@ msgstr "Uno dei documenti nel pacchetto corrente ha un ruolo di firma non compat
 
 #: packages/email/template-components/template-account-disabled.tsx
 msgid "One of your signing requests has been reported. As part of keeping signers safe, we've disabled your account for now."
-msgstr ""
+msgstr "Una delle tue richieste di firma è stata segnalata. Per la sicurezza dei firmatari abbiamo disattivato il tuo account per ora."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
@@ -8472,11 +8472,11 @@ msgstr "Verranno annullati solo i documenti in sospeso per i quali hai l’autor
 
 #: packages/email/template-components/template-new-account-warning.tsx
 msgid "Only sign if you know and were expecting this sender."
-msgstr ""
+msgstr "Firma solo se conosci questo mittente e aspettavi il documento."
 
 #: packages/email/template-components/template-new-account-warning.tsx
 msgid "Only sign if you know and were expecting this sender. <0>Report sender</0>"
-msgstr ""
+msgstr "Firma solo se conosci questo mittente e aspettavi il documento. <0>Segnala il mittente</0>"
 
 #: apps/remix/app/components/general/generic-error-layout.tsx
 #: apps/remix/app/components/general/generic-error-layout.tsx
@@ -12668,11 +12668,11 @@ msgstr ""
 
 #: packages/email/template-components/template-recipient-removed-by-admin.tsx
 msgid "There is no action required on your side. If you believe this was a mistake, please contact the document sender."
-msgstr ""
+msgstr "Non devi fare nulla. Se pensi che sia un errore, contatta chi ti ha inviato il documento."
 
 #: packages/email/template-components/template-recipient-removed-by-admin.tsx
 msgid "There is no action required on your side. If you believe this was a mistake, please contact your administrator."
-msgstr ""
+msgstr "Non devi fare nulla. Se pensi che sia un errore, contatta il tuo amministratore."
 
 #: apps/remix/app/components/embed/authoring/configure-document-upload.tsx
 msgid "There was an error uploading your file. Please try again."
@@ -14332,7 +14332,7 @@ msgstr "In attesa di altri"
 
 #: packages/lib/jobs/definitions/emails/send-document-pending-email.handler.ts
 msgid "Waiting for others to complete signing"
-msgstr ""
+msgstr "In attesa che gli altri completino la firma"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Waiting for others to sign"
@@ -14368,7 +14368,7 @@ msgstr "Avvertenza: Assistente come ultimo firmatario"
 
 #: packages/email/template-components/template-new-account-warning.tsx
 msgid "Warning: This was sent from a new account ({senderEmail})"
-msgstr ""
+msgstr "Attenzione: questo documento è stato inviato da un account nuovo ({senderEmail})"
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 #: apps/remix/app/components/general/organisations/organisation-billing-portal-button.tsx
@@ -14804,7 +14804,7 @@ msgstr ""
 
 #: packages/email/templates/organisation-limits-updated.tsx
 msgid "We've updated the usage limits for your organisation."
-msgstr ""
+msgstr "Abbiamo aggiornato i limiti di utilizzo della tua organizzazione."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
@@ -15376,7 +15376,7 @@ msgstr "Sei stato invitato a unirti a {0} su Firma Retoria"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have been invited to join <0>{organisationName}</0> on Documenso."
-msgstr "You have been invited to join <0>{organisationName}</0> on Firma Retoria."
+msgstr "Sei stato invitato a unirti a <0>{organisationName}</0> su Firma Retoria."
 
 #: packages/email/templates/organisation-invite.tsx
 msgid "You have been invited to join the following organisation"
@@ -15390,11 +15390,11 @@ msgstr "Sei stato rimosso da un documento"
 
 #: packages/email/template-components/template-recipient-removed-by-admin.tsx
 msgid "You have been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender."
-msgstr ""
+msgstr "Sei stato rimosso dal documento \"{documentName}\" da un amministratore, di solito su richiesta di chi lo ha inviato."
 
 #: packages/email/templates/recipient-removed-by-admin.tsx
 msgid "You have been removed from the document \"{documentName}\" by an administrator."
-msgstr ""
+msgstr "Sei stato rimosso dal documento \"{documentName}\" da un amministratore."
 
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
 msgid "You have been requested to sign the following documents. Review each document carefully and complete the signing process."
@@ -15777,7 +15777,7 @@ msgstr "Riceverai una copia del documento firmato via email non appena tutti avr
 
 #: packages/email/template-components/template-account-disabled.tsx
 msgid "You won't be able to sign in or send documents while it is disabled."
-msgstr ""
+msgstr "Finché è disattivato non potrai accedere né inviare documenti."
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "You're an admin. You can enable AI features for this team right away. Everyone on the team will see AI detection once enabled."
@@ -15802,7 +15802,7 @@ msgstr "Il tuo account è stato eliminato con successo."
 
 #: packages/email/template-components/template-account-disabled.tsx
 msgid "Your account has been disabled"
-msgstr ""
+msgstr "Il tuo account è stato disattivato"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security._index.tsx
 msgid "Your account has no password. Add one to sign in with your email and to sign documents that require it. We'll email you a link."
@@ -16094,7 +16094,7 @@ msgstr "La tua organizzazione si sta avvicinando ai limiti di utilizzo corretto 
 
 #: packages/email/templates/organisation-limits-updated.tsx
 msgid "Your organisation limits have been updated"
-msgstr ""
+msgstr "I limiti della tua organizzazione sono stati aggiornati"
 
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -16108,11 +16108,11 @@ msgstr "La tua password è stata aggiornata."
 #: packages/email/templates/reset-password.tsx
 #: packages/lib/server-only/auth/send-reset-password.ts
 msgid "Your password was changed"
-msgstr ""
+msgstr "La tua password è stata cambiata"
 
 #: packages/email/templates/reset-password.tsx
 msgid "Your password was just changed from your account security settings."
-msgstr ""
+msgstr "La tua password è stata appena cambiata dalle impostazioni di sicurezza del tuo account."
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Your payment is overdue. Please settle the payment to avoid any service disruptions."

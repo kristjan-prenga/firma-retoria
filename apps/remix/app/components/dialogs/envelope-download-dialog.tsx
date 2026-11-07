@@ -1,4 +1,5 @@
 import { downloadPDF } from '@documenso/lib/client-only/download-pdf';
+import { DocumentCertificateDownloadButton } from '~/components/general/document/document-certificate-download-button';
 import { trpc } from '@documenso/trpc/react';
 import { Button } from '@documenso/ui/primitives/button';
 import {
@@ -225,6 +226,11 @@ export const EnvelopeDownloadDialog = ({
                   </div>
                 </div>
               ))}
+
+          {/* Retoria: il certificato non è allegato al PDF firmato, chi ha inviato il documento lo scarica qui a parte */}
+          {!token && envelopeStatus === DocumentStatus.COMPLETED && (
+            <DocumentCertificateDownloadButton envelopeId={envelopeId} documentStatus={envelopeStatus} />
+          )}
         </div>
       </DialogContent>
     </Dialog>

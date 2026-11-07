@@ -607,7 +607,7 @@ export const EnvelopeSignerPageRenderer = ({ pageData }: { pageData: PageRenderD
           key={field.id}
           field={field}
           showFieldStatus={true}
-          showRecipientTooltip={true}
+          showRecipientTooltip={false} // Retoria: i firmatari non vedono nome ed email degli altri
         />
       ))}
 
