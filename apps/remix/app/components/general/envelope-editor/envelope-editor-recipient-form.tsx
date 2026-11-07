@@ -386,7 +386,7 @@ export const EnvelopeEditorRecipientForm = () => {
           </CardDescription>
         </div>
 
-        <div className="flex flex-row items-center space-x-2">
+        <div className="flex w-full flex-col gap-2 md:w-auto md:flex-row md:items-center md:gap-0 md:space-x-2">
           {editorConfig.recipients?.allowAIDetection && (
             <Tooltip>
               <TooltipTrigger asChild>

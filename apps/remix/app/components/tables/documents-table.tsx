@@ -119,7 +119,10 @@ export const DocumentsTable = ({
         cell: ({ row }) =>
           (!row.original.deletedAt || isDocumentCompleted(row.original.status)) && (
             <div className="flex items-center gap-x-4">
-              <DocumentsTableActionButton row={row.original} />
+              {/* Retoria: sul telefono restano solo i tre puntini, che contengono anche questa azione */}
+              <div className="hidden md:block">
+                <DocumentsTableActionButton row={row.original} />
+              </div>
               <DocumentsTableActionDropdown
                 row={row.original}
                 onMoveDocument={onMoveDocument ? () => onMoveDocument(row.original.envelopeId) : undefined}
@@ -161,6 +164,7 @@ export const DocumentsTable = ({
           sender: team !== undefined && !isMobile,
           createdAt: !isMobile,
           recipient: !isMobile,
+          select: !isMobile,
         }}
         error={{
           enable: isLoadingError || false,

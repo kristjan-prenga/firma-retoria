@@ -54,7 +54,7 @@ export const DocumentSigningMobileWidget = () => {
                 )}
 
                 <div>
-                  <h2 className="font-semibold text-base text-foreground">
+                  <h2 className="whitespace-nowrap font-semibold text-base text-foreground">
                     {match(recipient.role)
                       .with(RecipientRole.VIEWER, () => <Trans>View Document</Trans>)
                       .with(RecipientRole.SIGNER, () => <Trans>Sign Document</Trans>)

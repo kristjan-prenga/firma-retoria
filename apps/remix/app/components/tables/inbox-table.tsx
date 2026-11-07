@@ -130,6 +130,7 @@ export const InboxTable = () => {
           sender: team !== undefined && !isMobile,
           createdAt: !isMobile,
           recipient: !isMobile,
+          status: !isMobile,
         }}
         error={{
           enable: isLoadingError || false,

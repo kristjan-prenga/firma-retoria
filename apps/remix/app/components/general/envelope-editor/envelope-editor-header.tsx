@@ -203,7 +203,12 @@ export default function EnvelopeEditorHeader() {
                   trigger={
                     <Button size="sm">
                       <SendIcon className="mr-2 h-4 w-4" />
-                      <Trans>Send Document</Trans>
+                      <span className="md:hidden">
+                        <Trans>Send</Trans>
+                      </span>
+                      <span className="hidden md:inline">
+                        <Trans>Send Document</Trans>
+                      </span>
                     </Button>
                   }
                 />
