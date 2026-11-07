@@ -426,7 +426,7 @@ export const EnvelopeEditorRecipientForm = () => {
           <Button
             variant="outline"
             type="button"
-            className="flex-1"
+            className="flex-none md:flex-1"
             size="sm"
             disabled={isSubmitting || watchedSigners.length >= remaining.recipients}
             onClick={() => onAddSigner()}

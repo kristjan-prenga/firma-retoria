@@ -35,7 +35,7 @@ export const DocumentSigningMobileWidget = () => {
       <div className="pointer-events-auto w-full max-w-[760px]">
         <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
           {/* Main Header Bar */}
-          <div className="flex items-center justify-between gap-4 p-4">
+          <div className="flex items-center justify-between gap-2 p-3">
             <div className="flex-1">
               <div className="flex items-center gap-3">
                 {recipient.role !== RecipientRole.VIEWER && (
@@ -54,7 +54,7 @@ export const DocumentSigningMobileWidget = () => {
                 )}
 
                 <div>
-                  <h2 className="whitespace-nowrap font-semibold text-base text-foreground">
+                  <h2 className="whitespace-nowrap font-semibold text-foreground text-sm">
                     {match(recipient.role)
                       .with(RecipientRole.VIEWER, () => <Trans>View Document</Trans>)
                       .with(RecipientRole.SIGNER, () => <Trans>Sign Document</Trans>)
@@ -83,7 +83,7 @@ export const DocumentSigningMobileWidget = () => {
               </div>
             </div>
 
-            <div>
+            <div className="shrink-0 [&_button]:whitespace-nowrap [&_button]:px-3">
               <EnvelopeSignerCompleteDialog />
             </div>
           </div>

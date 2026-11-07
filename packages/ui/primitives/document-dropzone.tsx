@@ -87,7 +87,7 @@ export const DocumentDropzone = ({
         {...getRootProps()}
         {...props}
       >
-        <CardContent className="flex flex-col items-center justify-center p-6 text-muted-foreground/40">
+        <CardContent className="flex flex-col items-center justify-center p-6 text-muted-foreground/40 max-md:overflow-hidden">
           {disabled ? (
             // Disabled State
             <div className="flex">

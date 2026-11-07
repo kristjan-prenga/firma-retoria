@@ -247,7 +247,7 @@ const DataTableTitle = ({ row, teamUrl, teamEmail }: DataTableTitleProps) => {
       <Link
         to={formatPath}
         title={row.title}
-        className="block max-w-[10rem] truncate font-medium hover:underline md:max-w-[20rem]"
+        className="block max-w-[9rem] truncate font-medium hover:underline md:max-w-[20rem]"
       >
         {row.title}
       </Link>
@@ -256,12 +256,12 @@ const DataTableTitle = ({ row, teamUrl, teamEmail }: DataTableTitleProps) => {
       <Link
         to={`/sign/${recipient?.token}`}
         title={row.title}
-        className="block max-w-[10rem] truncate font-medium hover:underline md:max-w-[20rem]"
+        className="block max-w-[9rem] truncate font-medium hover:underline md:max-w-[20rem]"
       >
         {row.title}
       </Link>
     ))
     .otherwise(() => (
-      <span className="block max-w-[10rem] truncate font-medium hover:underline md:max-w-[20rem]">{row.title}</span>
+      <span className="block max-w-[9rem] truncate font-medium hover:underline md:max-w-[20rem]">{row.title}</span>
     ));
 };
