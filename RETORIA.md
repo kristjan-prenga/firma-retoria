@@ -16,6 +16,7 @@ Licenza: AGPL-3.0, come l'originale (vedi `LICENSE`). © Documenso, Inc. per il 
 - Nel PDF firmato, sotto ogni firma, l'ID della firma (lo stesso del certificato di firma) e data e ora di Roma (`packages/lib/server-only/pdf/insert-field-in-pdf-v2.ts`).
 - Nella pagina di firma i firmatari non vedono nome ed email degli altri firmatari; chi invia il documento scarica il certificato di firma dalla finestra «Scarica file».
 - Frasi delle email senza traduzione italiana completate.
+- Interfaccia per telefono (sotto 768 px, la versione per computer non cambia): editor con barra a icone e pannello dei campi sopra il PDF, campi firma posizionabili con il tocco, destinatari su più righe, tabelle con titolo, stato e menu, barra in alto con il logo, pannello di firma compatto.
 - Avviso di licenza AGPL-3.0 e link a questo repository in fondo a ogni pagina.
 
 ## Costruire l'immagine
