@@ -13,6 +13,9 @@ Licenza: AGPL-3.0, come l'originale (vedi `LICENSE`). © Documenso, Inc. per il 
 - Tolti i rimandi promozionali a documenso.com; pagina di assistenza con il contatto di Retoria ETS.
 - Interfaccia ridotta a ciò che Retoria offre: in alto a destra nome ed email di chi è collegato; nascosti dai menu (non cancellati) organizzazioni, team, membri, gruppi, analytics, token API, webhook e profilo pubblico (`packages/lib/utils/settings-nav.ts`, `org-menu-switcher.tsx`).
 - Email dell'account (conferma iscrizione, password, account disattivato) in italiano anche senza lingua dell'organizzazione; niente illustrazione grande nelle email, per non farle sembrare newsletter.
+- Nel PDF firmato, sotto ogni firma, l'ID della firma (lo stesso del certificato di firma) e data e ora di Roma (`packages/lib/server-only/pdf/insert-field-in-pdf-v2.ts`).
+- Nella pagina di firma i firmatari non vedono nome ed email degli altri firmatari; chi invia il documento scarica il certificato di firma dalla finestra «Scarica file».
+- Frasi delle email senza traduzione italiana completate.
 - Avviso di licenza AGPL-3.0 e link a questo repository in fondo a ogni pagina.
 
 ## Costruire l'immagine
