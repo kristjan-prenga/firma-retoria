@@ -18,6 +18,7 @@ Licenza: AGPL-3.0, come l'originale (vedi `LICENSE`). © Documenso, Inc. per il 
 - Frasi delle email senza traduzione italiana completate.
 - Interfaccia per telefono (sotto 768 px, la versione per computer non cambia): editor con barra a icone e pannello dei campi sopra il PDF, campi firma posizionabili con il tocco, destinatari su più righe, tabelle con titolo, stato e menu, barra in alto con il logo, pannello di firma compatto.
 - Editor sul telefono: freccia per tornare ai documenti in alto a sinistra; barra a icone che si apre con le etichette («Mostra le etichette»).
+- Finestre sul telefono come pannello dal basso, scorrevoli (anche con il telefono in orizzontale); riquadro della firma che si adegua quando si gira il telefono, così il tratto resta sotto il dito.
 - Avviso di licenza AGPL-3.0 e link a questo repository in fondo a ogni pagina.
 
 ## Costruire l'immagine
